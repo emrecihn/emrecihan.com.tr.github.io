@@ -4,40 +4,147 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Emre Cihan | ERP, IT ve Elektronik Blog</title>
+<title>Emre Cihan | ERP, IT ve Elektronik Sistemler</title>
 <meta name="description" content="ERP optimizasyonu, SQL performans artırma, PCB tasarım rehberleri ve IoT projeleri üzerine teknik blog.">
 
-<link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#0f1115;
+  color:#e6e6e6;
+  line-height:1.8;
+}
+
+header{
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#0f1115,#161a22);
+}
+
+header h1{
+  font-size:2.5rem;
+  margin:0;
+}
+
+header p{
+  color:#aaa;
+  margin-top:10px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#161a22;
+  border-radius:14px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 30px rgba(0,179,255,0.2);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:25px;
+}
+
+.card-content h2{
+  margin:0 0 10px 0;
+  font-size:1.4rem;
+}
+
+.card-content p{
+  color:#aaa;
+  font-size:0.95rem;
+}
+
+.read-btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:8px 16px;
+  background:#00b3ff;
+  color:#000;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+footer{
+  text-align:center;
+  padding:50px 20px;
+  border-top:1px solid #222;
+  color:#777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <h1>Emre Cihan</h1>
-    <p>ERP • IT Altyapı • Elektronik Sistemler</p>
-  </div>
+  <h1>Emre Cihan</h1>
+  <p>ERP • IT Altyapı • Elektronik Sistemler</p>
 </header>
 
-<main class="container">
+<section class="container">
+  <div class="grid">
 
-  <article class="post-preview">
-    <h2><a href="post.html">ERP Sistemlerinde Performans Optimizasyonu</a></h2>
-    <p>SQL tuning, indeks stratejileri ve backend mimari iyileştirmeleri ile performans artırma rehberi.</p>
-  </article>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="ERP SQL">
+      <div class="card-content">
+        <h2>ERP Sistemlerinde Performans Optimizasyonu</h2>
+        <p>SQL tuning, indeks stratejileri ve backend mimari iyileştirmeleri ile performans artırma rehberi.</p>
+        <a href="#" class="read-btn">Devamını Oku</a>
+      </div>
+    </div>
 
-  <article class="post-preview">
-    <h2><a href="#">PCB Tasarlarken Yapılan 10 Kritik Hata</a></h2>
-    <p>Grounding, signal integrity ve layout planlamasında yapılan kritik tasarım hataları.</p>
-  </article>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581090700227-1e8f0f55c6d0" alt="PCB Tasarım">
+      <div class="card-content">
+        <h2>PCB Tasarlarken Yapılan 10 Kritik Hata</h2>
+        <p>Grounding, signal integrity ve layout planlamasında yapılan kritik tasarım hataları.</p>
+        <a href="#" class="read-btn">Devamını Oku</a>
+      </div>
+    </div>
 
-</main>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f" alt="IoT">
+      <div class="card-content">
+        <h2>IoT Projesine Nereden Başlanmalı?</h2>
+        <p>Sensör seçimi, haberleşme protokolleri ve gömülü sistem mimarisi üzerine başlangıç rehberi.</p>
+        <a href="#" class="read-btn">Devamını Oku</a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <footer>
-  © 2026 Emre Cihan
+© 2026 Emre Cihan | Tüm Hakları Saklıdır
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+console.log("Blog aktif");
+</script>
+
 </body>
 </html>
