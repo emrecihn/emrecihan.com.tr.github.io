@@ -5,7 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Emre Cihan | ERP, IT ve Elektronik Sistemler</title>
-<meta name="description" content="ERP optimizasyonu, SQL performans artırma, PCB tasarım rehberleri ve IoT projeleri üzerine teknik blog.">
+<meta name="description" content="ERP optimizasyonu, SQL performans artırma, PCB tasarım rehberleri ve IoT projeleri üzerine teknik blog ve projeler.">
+<meta name="keywords" content="ERP, SQL optimizasyonu, PCB tasarım, IoT projeleri, IT altyapı, sistem yöneticisi blog">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Emre Cihan | ERP & Elektronik Sistemler">
+<meta property="og:description" content="Donanım ve yazılımın birleştiği teknik blog ve projeler.">
+<meta property="og:type" content="website">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Emre Cihan",
+ "url": "https://emrecihan.com.tr",
+ "jobTitle": "IT Specialist & Electronics Developer"
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -16,33 +33,59 @@ body{
   background:#0f1115;
   color:#e6e6e6;
   line-height:1.8;
+  scroll-behavior:smooth;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#11151c;
+  padding:15px 0;
+  z-index:1000;
+  text-align:center;
+}
+
+nav a{
+  color:#aaa;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:#00b3ff;
 }
 
 header{
-  padding:80px 20px;
+  padding:140px 20px 100px 20px;
   text-align:center;
   background:linear-gradient(135deg,#0f1115,#161a22);
 }
 
 header h1{
   font-size:2.5rem;
-  margin:0;
 }
 
 header p{
   color:#aaa;
-  margin-top:10px;
 }
 
-.container{
+.section{
+  padding:80px 20px;
   max-width:1100px;
   margin:auto;
-  padding:40px 20px;
+}
+
+.section h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2rem;
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:30px;
 }
 
@@ -68,9 +111,8 @@ header p{
   padding:25px;
 }
 
-.card-content h2{
+.card-content h3{
   margin:0 0 10px 0;
-  font-size:1.4rem;
 }
 
 .card-content p{
@@ -78,15 +120,38 @@ header p{
   font-size:0.95rem;
 }
 
-.read-btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:8px 16px;
+.about{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  color:#bbb;
+}
+
+.contact-form{
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:12px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:6px;
+  background:#161a22;
+  color:#fff;
+}
+
+.contact-form button{
+  padding:12px;
+  border:none;
   background:#00b3ff;
   color:#000;
-  border-radius:6px;
-  text-decoration:none;
   font-weight:600;
+  border-radius:6px;
+  cursor:pointer;
 }
 
 footer{
@@ -95,56 +160,95 @@ footer{
   border-top:1px solid #222;
   color:#777;
 }
+
+@media(max-width:768px){
+  header h1{
+    font-size:2rem;
+  }
+  nav a{
+    display:inline-block;
+    margin:8px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+  <a href="#home">Ana Sayfa</a>
+  <a href="#about">Hakkımda</a>
+  <a href="#blog">Blog</a>
+  <a href="#projects">Projeler</a>
+  <a href="#contact">İletişim</a>
+</nav>
+
+<header id="home">
   <h1>Emre Cihan</h1>
-  <p>ERP • IT Altyapı • Elektronik Sistemler</p>
+  <p>ERP • IT Altyapı • Elektronik Sistemler • IoT</p>
 </header>
 
-<section class="container">
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="ERP SQL">
-      <div class="card-content">
-        <h2>ERP Sistemlerinde Performans Optimizasyonu</h2>
-        <p>SQL tuning, indeks stratejileri ve backend mimari iyileştirmeleri ile performans artırma rehberi.</p>
-        <a href="#" class="read-btn">Devamını Oku</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581090700227-1e8f0f55c6d0" alt="PCB Tasarım">
-      <div class="card-content">
-        <h2>PCB Tasarlarken Yapılan 10 Kritik Hata</h2>
-        <p>Grounding, signal integrity ve layout planlamasında yapılan kritik tasarım hataları.</p>
-        <a href="#" class="read-btn">Devamını Oku</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f" alt="IoT">
-      <div class="card-content">
-        <h2>IoT Projesine Nereden Başlanmalı?</h2>
-        <p>Sensör seçimi, haberleşme protokolleri ve gömülü sistem mimarisi üzerine başlangıç rehberi.</p>
-        <a href="#" class="read-btn">Devamını Oku</a>
-      </div>
-    </div>
-
+<section id="about" class="section">
+  <h2>Hakkımda</h2>
+  <div class="about">
+    IT sektöründe çalışan ve elektronik alanında üretim hedefleyen bir geliştirici olarak,
+    ERP sistemleri, backend mimarileri, PCB tasarım ve IoT projeleri üzerine çalışıyorum.
   </div>
+</section>
+
+<section id="blog" class="section">
+  <h2>Blog Yazıları</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+      <div class="card-content">
+        <h3>ERP Sistemlerinde Performans Optimizasyonu</h3>
+        <p>SQL tuning ve indeks stratejileri ile performans artırma rehberi.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581090700227-1e8f0f55c6d0">
+      <div class="card-content">
+        <h3>PCB Tasarım Hataları</h3>
+        <p>Signal integrity ve grounding konularında kritik hatalar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <h2>Projeler</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-content">
+        <h3>DomainMonitorX</h3>
+        <p>Domain ve lisans takip masaüstü uygulaması.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Solar Motion Light</h3>
+        <p>Güneş enerjili sensörlü akıllı aydınlatma sistemi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>İletişim</h2>
+  <form class="contact-form" action="mailto:mailadresin@example.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Adınız" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="5" placeholder="Mesajınız" required></textarea>
+    <button type="submit">Gönder</button>
+  </form>
 </section>
 
 <footer>
 © 2026 Emre Cihan | Tüm Hakları Saklıdır
 </footer>
-
-<script>
-console.log("Blog aktif");
-</script>
 
 </body>
 </html>
