@@ -1,253 +1,187 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEC | Emre Cihan - ERP, IT ve Elektronik Sistemler</title>
+    <meta name="description" content="ERP optimizasyonu, SQL performans artırma, PCB tasarım rehberleri ve IoT projeleri.">
+    <meta name="keywords" content="Hasan Emre Cihan, ERP, SQL optimizasyonu, PCB tasarım, IT altyapı">
 
-<title>Emre Cihan | ERP, IT ve Elektronik Sistemler</title>
-<meta name="description" content="ERP optimizasyonu, SQL performans artırma, PCB tasarım rehberleri ve IoT projeleri üzerine teknik blog ve projeler.">
-<meta name="keywords" content="Hasan Emre Cihan,Emre Cihan,Cihan,Emre,emre,hasan emre cihan,hasanemrecihan,Hasanemrecihan,ERP, SQL optimizasyonu, PCB tasarım, IoT projeleri, IT altyapı, sistem yöneticisi blog">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Emre Cihan | ERP & Elektronik Sistemler">
-<meta property="og:description" content="Donanım ve yazılımın birleştiği teknik blog ve projeler.">
-<meta property="og:type" content="website">
+    <style>
+        :root {
+            --primary: #FF6B00; /* Turuncu */
+            --bg: #ffffff;
+            --section-bg: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
 
-<!-- Schema -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Person",
- "name": "Emre Cihan",
- "url": "https://emrecihan.com.tr",
- "jobTitle": "IT Specialist & Electronics Developer"
-}
-</script>
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-dark); line-height: 1.7; scroll-behavior: smooth; }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        /* --- Navigasyon (Yenilendi) --- */
+        nav {
+            position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px); padding: 15px 0; z-index: 1000; border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-around; align-items: center;
+        }
 
-<style>
-body{
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background:#0f1115;
-  color:#e6e6e6;
-  line-height:1.8;
-  scroll-behavior:smooth;
-}
+        .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-dark); font-weight: 800; }
+        .logo-box { width: 32px; height: 32px; border: 2.5px solid var(--primary); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 0.9rem; }
 
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:#11151c;
-  padding:15px 0;
-  z-index:1000;
-  text-align:center;
-}
+        nav a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
 
-nav a{
-  color:#aaa;
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:600;
-}
+        /* --- Hero Alanı --- */
+        header { padding: 160px 20px 100px 20px; text-align: center; background: radial-gradient(circle at top right, #fff5ee 0%, #ffffff 100%); }
+        header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        header p { color: var(--text-muted); font-size: 1.2rem; }
 
-nav a:hover{
-  color:#00b3ff;
-}
+        .section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+        .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-header{
-  padding:140px 20px 100px 20px;
-  text-align:center;
-  background:linear-gradient(135deg,#0f1115,#161a22);
-}
+        /* --- Sektör Bazlı Blog Yapısı --- */
+        .category-label { color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: block; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
 
-header h1{
-  font-size:2.5rem;
-}
+        .card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; overflow: hidden; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(255,107,0,0.1); }
+        .card-content { padding: 25px; }
+        .card-content h3 { margin-bottom: 10px; font-size: 1.25rem; }
+        .card-content p { color: var(--text-muted); font-size: 0.95rem; }
 
-header p{
-  color:#aaa;
-}
+        /* --- İletişim Formu --- */
+        .contact-form { max-width: 600px; margin: auto; display: flex; flex-direction: column; }
+        .contact-form input, .contact-form textarea { padding: 14px; margin-bottom: 15px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; }
+        .contact-form button { padding: 14px; border: none; background: var(--primary); color: #fff; font-weight: 700; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .contact-form button:hover { opacity: 0.9; transform: scale(0.98); }
 
-.section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
-}
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border); color: var(--text-muted); }
 
-.section h2{
-  text-align:center;
-  margin-bottom:50px;
-  font-size:2rem;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-}
-
-.card{
-  background:#161a22;
-  border-radius:14px;
-  overflow:hidden;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 30px rgba(0,179,255,0.2);
-}
-
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:25px;
-}
-
-.card-content h3{
-  margin:0 0 10px 0;
-}
-
-.card-content p{
-  color:#aaa;
-  font-size:0.95rem;
-}
-
-.about{
-  max-width:800px;
-  margin:auto;
-  text-align:center;
-  color:#bbb;
-}
-
-.contact-form{
-  max-width:600px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-}
-
-.contact-form input,
-.contact-form textarea{
-  padding:12px;
-  margin-bottom:15px;
-  border:none;
-  border-radius:6px;
-  background:#161a22;
-  color:#fff;
-}
-
-.contact-form button{
-  padding:12px;
-  border:none;
-  background:#00b3ff;
-  color:#000;
-  font-weight:600;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-footer{
-  text-align:center;
-  padding:50px 20px;
-  border-top:1px solid #222;
-  color:#777;
-}
-
-@media(max-width:768px){
-  header h1{
-    font-size:2rem;
-  }
-  nav a{
-    display:inline-block;
-    margin:8px;
-  }
-}
-</style>
+        @media(max-width:768px){ header h1 { font-size: 2.2rem; } nav { flex-direction: column; gap: 10px; } }
+    </style>
 </head>
-
 <body>
 
 <nav>
-  <a href="#home">Ana Sayfa</a>
-  <a href="#about">Hakkımda</a>
-  <a href="#blog">Blog</a>
-  <a href="#projects">Projeler</a>
-  <a href="#contact">İletişim</a>
+    <a href="#home" class="logo">
+        <div class="logo-box">H</div> HEC<span>.</span>
+    </a>
+    <div class="nav-links">
+        <a href="#about">Hakkımda</a>
+        <a href="#it-sistem">IT & Sistem</a>
+        <a href="#yazilim">Yazılım/ERP</a>
+        <a href="#elektronik">Elektronik</a>
+        <a href="#contact">İletişim</a>
+    </div>
 </nav>
 
 <header id="home">
-  <h1>Emre Cihan</h1>
-  <p>ERP • IT Altyapı • Elektronik Sistemler • IoT</p>
+    <h1>Emre Cihan</h1>
+    <p>ERP • IT Altyapı • Elektronik Sistemler • Üretim</p>
 </header>
 
 <section id="about" class="section">
-  <h2>Hakkımda</h2>
-  <div class="about">
-    IT sektöründe çalışan ve elektronik alanında üretim hedefleyen bir geliştirici olarak,
-    ERP sistemleri, backend mimarileri, PCB tasarım ve IoT projeleri üzerine çalışıyorum.
-  </div>
+    <h2 class="section-title">Hakkımda</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto; color: var(--text-muted);">
+        IT altyapı yönetimi ve kurumsal ERP çözümleri konusundaki tecrübemi, elektronik tasarım ve IoT dünyasıyla birleştiriyorum. 
+        Geleceğin fabrikaları ve dijital dönüşüm süreçleri için hem yazılım hem donanım geliştiriyorum.
+    </p>
 </section>
 
-<section id="blog" class="section">
-  <h2>Blog Yazıları</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
-      <div class="card-content">
-        <h3>ERP Sistemlerinde Performans Optimizasyonu</h3>
-        <p>SQL tuning ve indeks stratejileri ile performans artırma rehberi.</p>
-      </div>
+<section id="it-sistem" class="section" style="background: var(--section-bg);">
+    <span class="category-label">Sektör: IT & Sistem Yönetimi</span>
+    <h2 class="section-title">Teknik Çözümler</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-content">
+                <h3>Windows Server Error 1053</h3>
+                <p>Servis timeout sorunlarını registry üzerinden kalıcı olarak giderme rehberi.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>WatchGuard IPS Analizi</h3>
+                <p>SQL Injection saldırılarını bloklamak ve güvenlik duvarı optimizasyonu.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Proxmox Sanallaştırma</h3>
+                <p>Nginx Proxy Manager ile servislerin dış dünyaya güvenli açılması.</p>
+            </div>
+        </div>
     </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581090700227-1e8f0f55c6d0">
-      <div class="card-content">
-        <h3>PCB Tasarım Hataları</h3>
-        <p>Signal integrity ve grounding konularında kritik hatalar.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-<section id="projects" class="section">
-  <h2>Projeler</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="card-content">
-        <h3>DomainMonitorX</h3>
-        <p>Domain ve lisans takip masaüstü uygulaması.</p>
-      </div>
+<section id="yazilim" class="section">
+    <span class="category-label">Sektör: Yazılım & ERP Entegrasyonları</span>
+    <h2 class="section-title">Geliştirme Günlüğü</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-content">
+                <h3>SQL Sorgu Optimizasyonu</h3>
+                <p>Mikro ERP sistemlerinde performans artıran Indexing stratejileri.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>BIST-30 Python Veri Analizi</h3>
+                <p>Anlık piyasa verilerini çekmek için profesyonel WebSocket kullanımı.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>DomainMonitorX Mimarisi</h3>
+                <p>Bir SaaS ürünü geliştirirken dikkat edilmesi gereken mimari adımlar.</p>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="card">
-      <div class="card-content">
-        <h3>Solar Motion Light</h3>
-        <p>Güneş enerjili sensörlü akıllı aydınlatma sistemi.</p>
-      </div>
+<section id="elektronik" class="section" style="background: var(--section-bg);">
+    <span class="category-label">Sektör: Elektronik & PCB Tasarım</span>
+    <h2 class="section-title">Üretim & Projeler</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-content">
+                <h3>PCB Sinyal Bütünlüğü</h3>
+                <p>Yüksek frekanslı devrelerde EMI gürültüsünü engelleme yöntemleri.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Solar Motion Light</h3>
+                <p>Güneş enerjili akıllı aydınlatma prototipleme süreci.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>SmartDoc Classifier</h3>
+                <p>Yapay zeka ile dökümanları fizikselden dijitale taşıma projesi.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section id="contact" class="section">
-  <h2>İletişim</h2>
-  <form class="contact-form" action="mailto:mailadresin@example.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Adınız" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" rows="5" placeholder="Mesajınız" required></textarea>
-    <button type="submit">Gönder</button>
-  </form>
+    <h2 class="section-title">İletişim</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Adınız Soyadınız" required>
+        <input type="email" placeholder="E-posta Adresiniz" required>
+        <textarea rows="5" placeholder="Hangi konuda çözüm arıyorsunuz?" required></textarea>
+        <button type="submit">Mesaj Gönder</button>
+    </form>
 </section>
 
 <footer>
-© 2026 Emre Cihan | Tüm Hakları Saklıdır
+    <p>&copy; 2026 HEC | Hasan Emre Cihan. Tüm Hakları Saklıdır.</p>
 </footer>
 
 </body>
