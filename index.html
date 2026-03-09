@@ -1,449 +1,513 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" prefix="og: https://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEC | Hasan Emre Cihan - Yazılım, IT ve Donanım Mühendisliği</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="Emre Cihan teknik blogu. ERP optimizasyonu, Windows Server sorun çözümleri, PCB tasarımı, IoT ve B2B yazılım mimarileri üzerine detaylı makaleler.">
-    <meta name="keywords" content="Hasan Emre Cihan,Emre Cihan,Cihan, HEC, ODSAN, IT Sistem Yönetimi, Mikro ERP, SQL Optimizasyonu, Altium PCB Tasarım, WatchGuard IPS, Proxmox Sanallaştırma">
-    <meta name="author" content="Emre Cihan">
-    <meta name="robots" content="index, follow">
+  <!-- PRIMARY SEO -->
+  <title>Hasan Emre Cihan – Elektronik, IT ve Yazılım Üzerine Notlar</title>
+  <meta name="description" content="Hasan Emre Cihan'ın kişisel blogu. PCB tasarımı, gömülü sistemler, IoT, IT altyapısı ve ERP üzerine deneyimlerden doğan teknik yazılar." />
+  <meta name="keywords" content="Hasan Emre Cihan, Emre Cihan, emrecihan, PCB tasarımı, gömülü sistemler, Arduino, ESP32, IoT projesi, elektronik devre, IT sistem yönetimi, Active Directory, ERP entegrasyonu, SQL optimizasyonu, Node.js" />
+  <meta name="author" content="Hasan Emre Cihan" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://emrecihan.com.tr" />
+  <meta name="theme-color" content="#0C0A08" />
 
-    <meta property="og:title" content="HEC | Teknik Çözümler ve Mühendislik Blogu">
-    <meta property="og:description" content="Donanım ile yazılımın kesiştiği noktada: Sistem yönetimi, PCB tasarımı ve ERP entegrasyonları.">
-    <meta property="og:type" content="website">
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:url" content="https://emrecihan.com.tr" />
+  <meta property="og:site_name" content="Hasan Emre Cihan" />
+  <meta property="og:title" content="Hasan Emre Cihan – Elektronik, IT ve Yazılım Üzerine Notlar" />
+  <meta property="og:description" content="PCB tasarımı, IoT, gömülü sistemler, IT altyapısı ve yazılım üzerine teknik yazılar." />
+  <meta property="og:image" content="https://emrecihan.com.tr/og-image.jpg" />
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Emre Cihan",
-      "jobTitle": "IT & Electronics Systems Developer",
-      "url": "https://emrecihan.com.tr",
-      "knowsAbout": ["IT Systems", "ERP Integration", "PCB Design", "SQL Server", "Proxmox"]
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@hasanemrecihan" />
+  <meta name="twitter:title" content="Hasan Emre Cihan – Elektronik, IT ve Yazılım" />
+  <meta name="twitter:description" content="PCB tasarımı, IoT, gömülü sistemler ve yazılım üzerine teknik yazılar." />
+
+  <!-- STRUCTURED DATA – Person -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Hasan Emre Cihan","alternateName":["Emre Cihan","H. Emre Cihan","emrecihan"],"url":"https://emrecihan.com.tr","jobTitle":"Elektronik & Yazılım Geliştiricisi","description":"PCB tasarımı, gömülü sistemler, IoT, IT altyapısı ve kurumsal yazılım alanlarında çalışan geliştirici.","knowsAbout":["PCB Tasarımı","Gömülü Sistemler","IoT","Arduino","ESP32","IT Sistem Yönetimi","Active Directory","ERP","SQL","Node.js"],"sameAs":["https://linkedin.com/in/hasanemrecihan","https://github.com/hasanemrecihan"]}
+  </script>
+
+  <!-- STRUCTURED DATA – Blog -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"emrecihan.com.tr","url":"https://emrecihan.com.tr","description":"Elektronik, IT ve yazılım üzerine teknik notlar","inLanguage":"tr","author":{"@type":"Person","name":"Hasan Emre Cihan"}}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:     #0C0A08;
+      --bg2:    #131009;
+      --bg3:    #1C1710;
+      --surf:   #171210;
+      --acc:    #F5722A;
+      --acc2:   #FFB347;
+      --amber:  #FFD580;
+      --dim:    rgba(245,114,42,.14);
+      --txt:    #F0EBE3;
+      --muted:  #7A6A58;
+      --faint:  #3A3028;
+      --bord:   #221A12;
+      --card:   #110E0B;
     }
-    </script>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--txt);font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:999}
+    .glow{position:fixed;pointer-events:none;z-index:0;border-radius:50%;background:radial-gradient(circle,rgba(245,114,42,.1) 0%,transparent 65%);width:700px;height:700px;top:-200px;right:-150px;animation:breathe 8s ease-in-out infinite alternate}
+    @keyframes breathe{from{opacity:.6}to{opacity:1}}
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5%,80px);height:60px;background:rgba(12,10,8,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bord)}
+    .nav-brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:var(--txt);text-decoration:none;letter-spacing:-.3px}
+    .nav-brand span{color:var(--acc)}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-family:'JetBrains Mono',monospace;transition:color .2s;letter-spacing:.3px}
+    .nav-links a:hover{color:var(--acc)}
 
-    <style>
-        /* Renk Paleti ve Temel Değişkenler */
-        :root {
-            --primary: #FF6B00;       /* Karakteristik Turuncu */
-            --primary-hover: #e66000;
-            --bg-color: #ffffff;      /* Ana Arka Plan */
-            --bg-alt: #f8fafc;        /* Alternatif Arka Plan (Gri/Beyaz) */
-            --text-main: #0f172a;     /* Koyu Lacivert/Siyah Metin */
-            --text-muted: #64748b;    /* Açık Gri Metin */
-            --border-color: #e2e8f0;  /* Çizgi ve Çerçeve Rengi */
-            --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
+    /* HERO */
+    .hero{position:relative;z-index:1;padding:120px clamp(20px,5%,80px) 64px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start}
+    .hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--acc)}
+    .hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.2;letter-spacing:-.5px;margin-bottom:20px}
+    .hero h1 em{font-style:italic;color:var(--acc)}
+    .hero-bio{font-size:.95rem;color:#A09080;line-height:1.8;max-width:520px;margin-bottom:28px}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+    .htag{font-family:'JetBrains Mono',monospace;font-size:.68rem;padding:4px 10px;border-radius:4px;border:1px solid var(--bord);color:var(--muted);background:var(--surf)}
+    .htag.hot{border-color:rgba(245,114,42,.35);color:var(--acc2);background:var(--dim)}
+    .hero-links{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-solid{background:var(--acc);color:var(--bg);padding:10px 22px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;transition:all .2s}
+    .btn-solid:hover{box-shadow:0 0 24px rgba(245,114,42,.4);transform:translateY(-1px)}
+    .btn-line{border:1px solid var(--bord);color:var(--muted);padding:10px 22px;border-radius:6px;text-decoration:none;font-size:.85rem;transition:all .2s}
+    .btn-line:hover{border-color:var(--acc);color:var(--acc)}
 
-        /* Sıfırlama (Reset) */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            line-height: 1.7; 
-            -webkit-font-smoothing: antialiased; 
-        }
+    /* HERO SIDEBAR */
+    .hero-side{}
+    .side-card{background:var(--card);border:1px solid var(--bord);border-radius:12px;padding:22px;margin-bottom:16px}
+    .side-card-title{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .side-post{display:block;padding:10px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);font-size:.82rem;line-height:1.4;transition:color .2s}
+    .side-post:last-child{border-bottom:none;padding-bottom:0}
+    .side-post:hover{color:var(--acc)}
+    .side-post-cat{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);margin-bottom:3px;display:block}
+    .side-stat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bord);font-size:.82rem}
+    .side-stat-row:last-child{border-bottom:none}
+    .side-stat-row span:last-child{font-family:'JetBrains Mono',monospace;color:var(--acc);font-size:.78rem}
 
-        /* =========================================
-           NAVİGASYON (Üst Menü)
-           ========================================= */
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
-        }
+    /* MAIN LAYOUT */
+    .main-wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 clamp(20px,5%,80px) 80px;display:grid;grid-template-columns:1fr 300px;gap:60px}
 
-        /* Logo Tasarımı (H harfi ve devre yolu konsepti) */
-        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-main); font-weight: 800; font-size: 1.2rem;}
-        .logo-icon {
-            width: 35px; height: 35px; border: 3px solid var(--primary); border-radius: 8px;
-            display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.1rem; position: relative;
-        }
-        .logo-icon::after {
-            content: ''; position: absolute; right: -8px; top: 12px; width: 10px; height: 3px; background: var(--primary);
-        }
+    /* Section headers */
+    .sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--bord)}
+    .sec-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;letter-spacing:-.3px;display:flex;align-items:center;gap:10px}
+    .sec-head h2::before{content:'';width:3px;height:18px;background:var(--acc);border-radius:2px}
+    .sec-head a{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);text-decoration:none;transition:color .2s}
+    .sec-head a:hover{color:var(--acc)}
 
-        /* Menü Linkleri */
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
+    /* FEATURED */
+    .featured-post{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--card);border:1px solid var(--bord);border-radius:12px;overflow:hidden;text-decoration:none;color:var(--txt);margin-bottom:32px;transition:border-color .25s,transform .25s}
+    .featured-post:hover{border-color:rgba(245,114,42,.4);transform:translateY(-2px)}
+    .feat-visual{background:linear-gradient(135deg,#1A1208,#2A1A08);display:flex;align-items:center;justify-content:center;min-height:220px;position:relative;overflow:hidden}
+    .feat-visual .circuit{width:100%;height:100%;position:absolute;inset:0;opacity:.15;background-image:linear-gradient(rgba(245,114,42,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(245,114,42,.6) 1px,transparent 1px);background-size:24px 24px}
+    .feat-visual .big-icon{font-size:3.5rem;position:relative;z-index:1;filter:drop-shadow(0 0 20px rgba(245,114,42,.5))}
+    .feat-body{padding:28px;display:flex;flex-direction:column;gap:10px}
+    .feat-label{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--acc);background:var(--dim);border:1px solid rgba(245,114,42,.25);padding:3px 9px;border-radius:100px;align-self:flex-start}
+    .feat-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;line-height:1.3}
+    .feat-body p{font-size:.84rem;color:var(--muted);line-height:1.65;flex:1}
+    .feat-meta{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--faint);padding-top:10px;border-top:1px solid var(--bord)}
+    .feat-meta span{color:var(--muted)}
 
-        /* =========================================
-           HERO (Karşılama Alanı)
-           ========================================= */
-        .hero {
-            padding: 160px 5% 100px 5%; text-align: center;
-            background: radial-gradient(circle at top right, #fff4ed 0%, var(--bg-color) 70%);
-        }
-        .hero h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.2; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+    /* CAT SECTION */
+    .cat-section{margin-bottom:48px}
+    .cat-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+    .cat-icon-wrap{width:36px;height:36px;border-radius:8px;background:var(--dim);border:1px solid rgba(245,114,42,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .cat-header-text h3{font-family:'Fraunces',serif;font-weight:600;font-size:1rem}
+    .cat-header-text span{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted)}
 
-        /* =========================================
-           GENEL BÖLÜM (Section) AYARLARI
-           ========================================= */
-        .section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .bg-alt { background-color: var(--bg-alt); } /* Arka planı farklı bölüm */
-        
-        .section-header { margin-bottom: 50px; }
-        .section-tag { display: inline-block; background: #fff0e6; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .section-title { font-size: 2.2rem; font-weight: 800; }
+    /* CARD GRID */
+    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+    .mini-card{background:var(--card);border:1px solid var(--bord);border-radius:10px;padding:18px;text-decoration:none;color:var(--txt);transition:all .2s;display:flex;flex-direction:column;gap:8px}
+    .mini-card:hover{border-color:rgba(245,114,42,.3);transform:translateY(-2px)}
+    .mini-card-tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--acc);opacity:.8}
+    .mini-card-title{font-family:'Fraunces',serif;font-weight:600;font-size:.88rem;line-height:1.3}
+    .mini-card-desc{font-size:.75rem;color:var(--muted);line-height:1.5}
+    .mini-card-read{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:auto;padding-top:8px;border-top:1px solid var(--bord)}
 
-        /* =========================================
-           KARTLAR (Blog / Proje Grid Yapısı)
-           ========================================= */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        
-        .card {
-            background: #fff; border: 1px solid var(--border-color); border-radius: 12px;
-            padding: 30px; cursor: pointer; transition: all 0.3s ease; position: relative;
-        }
-        .card:hover {
-            transform: translateY(-8px); border-color: var(--primary); box-shadow: var(--card-shadow);
-        }
-        
-        .card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; display: block; }
-        .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: var(--text-main); line-height: 1.4; }
-        .card-summary { font-size: 0.95rem; color: var(--text-muted); }
+    /* POST LIST */
+    .post-list{display:flex;flex-direction:column;gap:1px}
+    .post-item{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;padding:18px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);transition:all .2s}
+    .post-item:first-child{padding-top:0}
+    .post-item:last-child{border-bottom:none}
+    .post-item:hover .post-item-title{color:var(--acc)}
+    .post-item:hover .pi-arrow{opacity:1;transform:translateX(0)}
+    .post-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--faint);padding-top:3px;min-width:20px}
+    .post-item-cat{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);margin-bottom:4px;display:block}
+    .post-item-title{font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;line-height:1.35;margin-bottom:4px;transition:color .2s}
+    .post-item-excerpt{font-size:.78rem;color:var(--muted);line-height:1.55}
+    .pi-arrow{font-size:.8rem;color:var(--acc);opacity:0;transform:translateX(-6px);transition:all .2s;padding-top:3px}
 
-        /* GİZLİ İÇERİK (Sadece tıklandığında okunur) */
-        .card-full-content { display: none; }
+    /* SIDEBAR */
+    .side-section{margin-bottom:32px}
+    .side-title{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .side-title::after{content:'';flex:1;height:1px;background:var(--bord)}
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:7px}
+    .tag-pill{font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:4px 10px;border-radius:100px;border:1px solid var(--bord);color:var(--muted);text-decoration:none;transition:all .2s;background:var(--card)}
+    .tag-pill:hover{border-color:var(--acc);color:var(--acc)}
+    .tag-pill.big{font-size:.72rem;padding:5px 13px}
+    .archive-list{list-style:none}
+    .archive-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--bord);font-size:.82rem}
+    .archive-item:last-child{border-bottom:none}
+    .archive-item a{color:var(--muted);text-decoration:none;transition:color .2s}
+    .archive-item a:hover{color:var(--acc)}
+    .archive-count{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--faint);background:var(--card);border:1px solid var(--bord);padding:2px 7px;border-radius:100px}
 
-        /* =========================================
-           MODAL (Yazı Okuma Penceresi)
-           ========================================= */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(5px);
-            z-index: 2000; display: none; overflow-y: auto; padding: 40px 20px;
-        }
-        .modal-box {
-            background: #fff; max-width: 800px; margin: 0 auto; padding: 50px;
-            border-radius: 16px; position: relative; animation: slideUp 0.4s ease;
-        }
-        @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        
-        .modal-close {
-            position: absolute; top: 25px; right: 25px; background: none; border: none;
-            font-size: 1.8rem; cursor: pointer; color: var(--text-muted); transition: 0.2s;
-        }
-        .modal-close:hover { color: var(--primary); transform: rotate(90deg); }
-        
-        /* Modal İçerik Tipografisi */
-        #modal-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
-        #modal-meta { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 30px; display: block; text-transform: uppercase; }
-        #modal-body { color: #334155; font-size: 1.1rem; line-height: 1.8; }
-        #modal-body h4 { margin: 25px 0 15px 0; color: var(--text-main); font-size: 1.3rem; }
-        #modal-body p { margin-bottom: 15px; }
-        #modal-body ul { margin-left: 20px; margin-bottom: 15px; }
-        #modal-body li { margin-bottom: 8px; }
-        #modal-body code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.95rem; color: #e11d48; }
+    /* NEWSLETTER */
+    .newsletter-mini{background:var(--card);border:1px solid var(--bord);border-radius:12px;padding:22px;position:relative;overflow:hidden}
+    .newsletter-mini::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--acc),var(--acc2),transparent)}
+    .newsletter-mini h3{font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;margin-bottom:8px}
+    .newsletter-mini p{font-size:.78rem;color:var(--muted);line-height:1.55;margin-bottom:14px}
+    .nl-row{display:flex;flex-direction:column;gap:8px}
+    .nl-row input{background:var(--bg3);border:1px solid var(--bord);border-radius:6px;padding:9px 12px;color:var(--txt);font-family:'Instrument Sans',sans-serif;font-size:.8rem;outline:none;transition:border .2s}
+    .nl-row input:focus{border-color:var(--acc)}
+    .nl-row input::placeholder{color:var(--faint)}
+    .nl-row button{background:var(--acc);color:var(--bg);border:none;padding:9px;border-radius:6px;font-weight:600;font-size:.82rem;cursor:pointer;transition:opacity .2s}
+    .nl-row button:hover{opacity:.9}
 
-        /* =========================================
-           İLETİŞİM FORMU VE FOOTER
-           ========================================= */
-        .contact-form { max-width: 600px; display: flex; flex-direction: column; gap: 20px; }
-        .form-input { width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 8px; font-family: 'Inter'; font-size: 1rem; }
-        .form-input:focus { outline: none; border-color: var(--primary); }
-        .btn-submit { background: var(--primary); color: #fff; border: none; padding: 16px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
-        .btn-submit:hover { background: var(--primary-hover); }
+    /* PROJECTS */
+    .project-list{display:flex;flex-direction:column;gap:10px}
+    .proj-chip{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bord);border-radius:8px;padding:12px;text-decoration:none;color:var(--txt);transition:all .2s}
+    .proj-chip:hover{border-color:rgba(245,114,42,.3)}
+    .proj-chip-icon{width:32px;height:32px;border-radius:6px;background:var(--dim);border:1px solid rgba(245,114,42,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+    .proj-chip-name{font-size:.82rem;font-weight:600;margin-bottom:2px}
+    .proj-chip-sub{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted)}
+    .proj-chip-status{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:2px 7px;border-radius:100px;flex-shrink:0}
+    .st-live{background:rgba(0,220,100,.12);color:#00DC64;border:1px solid rgba(0,220,100,.25)}
+    .st-wip{background:rgba(255,180,0,.12);color:#FFB400;border:1px solid rgba(255,180,0,.25)}
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; margin-top: 50px; }
+    /* ABOUT */
+    .about-strip{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 clamp(20px,5%,80px) 80px}
+    .about-inner{background:var(--card);border:1px solid var(--bord);border-radius:14px;padding:36px 40px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+    .about-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--bg);flex-shrink:0}
+    .about-text h2{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;margin-bottom:4px}
+    .about-text h2 small{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:.7rem;color:var(--muted);margin-left:10px}
+    .about-text p{font-size:.84rem;color:var(--muted);line-height:1.7;max-width:620px;margin-bottom:14px}
+    .about-pills{display:flex;gap:8px;flex-wrap:wrap}
+    .about-pill{font-family:'JetBrains Mono',monospace;font-size:.67rem;padding:3px 10px;border-radius:100px;border:1px solid rgba(245,114,42,.3);color:var(--acc2);text-decoration:none;transition:all .2s}
+    .about-pill:hover{background:var(--dim)}
 
-        /* =========================================
-           MOBİL UYARLAMA (Responsive Design)
-           ========================================= */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Mobilde menüyü gizle (basitlik için) */
-            .section { padding: 60px 5%; }
-            .modal-box { padding: 30px 20px; }
-            #modal-title { font-size: 1.6rem; }
-        }
-    </style>
+    /* FOOTER */
+    footer{position:relative;z-index:1;border-top:1px solid var(--bord);padding:28px clamp(20px,5%,80px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    footer p{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted)}
+    footer p a{color:var(--acc);text-decoration:none}
+    .footer-nav{display:flex;gap:20px}
+    .footer-nav a{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);text-decoration:none;transition:color .2s}
+    .footer-nav a:hover{color:var(--acc)}
+
+    /* Animations */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .f1{animation:fadeUp .6s .05s ease both}
+    .f2{animation:fadeUp .6s .15s ease both}
+    .f3{animation:fadeUp .6s .25s ease both}
+    .f4{animation:fadeUp .6s .35s ease both}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-side{display:none}
+      .main-wrap{grid-template-columns:1fr}
+      .side-col{display:none}
+      .featured-post{grid-template-columns:1fr}
+      .feat-visual{min-height:140px}
+      .about-inner{grid-template-columns:1fr}
+      .card-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){.nav-links{display:none}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
 </head>
 <body>
+<div class="glow" aria-hidden="true"></div>
 
-    <nav>
-        <a href="#" class="logo">
-            <div class="logo-icon">H</div>
-            HEC<span>.</span>
+<!-- NAV -->
+<nav role="navigation" aria-label="Ana menü">
+  <a href="/" class="nav-brand"><span>emre</span>cihan</a>
+  <div class="nav-links">
+    <a href="/elektronik">Elektronik</a>
+    <a href="/it-sistem">IT & Sistem</a>
+    <a href="/yazilim">Yazılım</a>
+    <a href="/projeler">Projeler</a>
+    <a href="/hakkimda">Hakkımda</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+  <div>
+    <div class="hero-eyebrow f1">Hasan Emre Cihan'ın blogu</div>
+    <h1 class="f2">Elektronik, IT ve yazılım üzerine<br><em>deneyimlerden doğan notlar</em></h1>
+    <p class="hero-bio f3">Merhaba, ben Emre. Mesleğim gereği IT tarafında çalışıyorum — sunucular, ERP'ler, Active Directory, o tür şeyler. Ama boş zamanlarım büyük çoğunlukla elektronikle geçiyor: devreler, PCB tasarımı, küçük IoT projeleri. Bu blog öğrendiklerimi ve çıkmaza girip çıktığım şeyleri not aldığım yer.</p>
+    <div class="hero-tags f3">
+      <span class="htag hot">PCB Tasarımı</span>
+      <span class="htag hot">ESP32 / Arduino</span>
+      <span class="htag hot">IoT</span>
+      <span class="htag">Gömülü Sistemler</span>
+      <span class="htag">IT Altyapısı</span>
+      <span class="htag">ERP</span>
+      <span class="htag">SQL</span>
+      <span class="htag">Node.js</span>
+    </div>
+    <div class="hero-links f4">
+      <a href="/elektronik" class="btn-solid">Elektronik yazıları</a>
+      <a href="/hakkimda" class="btn-line">Hakkımda</a>
+    </div>
+  </div>
+
+  <aside class="hero-side" aria-label="Son yazılar">
+    <div class="side-card">
+      <div class="side-card-title">// son eklenenler</div>
+      <a href="/elektronik/esp32-ev-otomasyon" class="side-post"><span class="side-post-cat">Elektronik · ESP32</span>ESP32 ile Ev Otomasyon Sistemi — MQTT ve Home Assistant</a>
+      <a href="/elektronik/pcb-ground-plane" class="side-post"><span class="side-post-cat">Elektronik · PCB</span>PCB'de Ground Plane Nasıl Yapılır, Neden Önemli?</a>
+      <a href="/it/active-directory-audit" class="side-post"><span class="side-post-cat">IT · Active Directory</span>Active Directory Audit Log Kurulumu ve Analizi</a>
+      <a href="/elektronik/lipo-sarj" class="side-post"><span class="side-post-cat">Elektronik · Güç</span>TP4056 ile LiPo Şarj Devresi — Tasarım Notları</a>
+      <a href="/yazilim/sql-execution-plan" class="side-post"><span class="side-post-cat">Yazılım · SQL</span>Execution Plan Okumak ve Sorgu Hızlandırmak</a>
+    </div>
+    <div class="side-card">
+      <div class="side-card-title">// içerik özeti</div>
+      <div class="side-stat-row"><span>Toplam yazı</span><span>47</span></div>
+      <div class="side-stat-row"><span>Elektronik</span><span>24</span></div>
+      <div class="side-stat-row"><span>IT & Sistem</span><span>13</span></div>
+      <div class="side-stat-row"><span>Yazılım</span><span>10</span></div>
+    </div>
+  </aside>
+</header>
+
+<!-- MAIN -->
+<main class="main-wrap" role="main">
+  <div class="main-col">
+
+    <!-- FEATURED -->
+    <div class="sec-head"><h2>Öne Çıkan Yazı</h2></div>
+    <a href="/elektronik/solar-sensörlu-lamba" class="featured-post">
+      <div class="feat-visual" aria-hidden="true">
+        <div class="circuit"></div>
+        <div class="big-icon">☀️</div>
+      </div>
+      <div class="feat-body">
+        <span class="feat-label">Proje Günlüğü</span>
+        <h3>Solar Hareket Sensörlü Lamba — Baştan Sona Tasarım Süreci</h3>
+        <p>Hem PCB tasarımını hem gömülü yazılımını sıfırdan yaptığım bir proje. PIR sensör seçiminden güç yönetimine, devre testinden seri üretime kadar öğrendiklerimi yazdım.</p>
+        <div class="feat-meta"><span>Elektronik · PCB · Gömülü</span><span>·</span><span>14 dk okuma</span></div>
+      </div>
+    </a>
+
+    <!-- ELEKTRONİK -->
+    <div class="cat-section">
+      <div class="cat-header">
+        <div class="cat-icon-wrap" aria-hidden="true">🔌</div>
+        <div class="cat-header-text"><h3>Elektronik & PCB</h3><span>24 yazı · En çok okunan kategori</span></div>
+      </div>
+      <div class="card-grid">
+        <a href="/elektronik/esp32-ev-otomasyon" class="mini-card">
+          <span class="mini-card-tag">ESP32 · MQTT · WiFi</span>
+          <div class="mini-card-title">ESP32 ile Ev Otomasyon Sistemi Kurmak</div>
+          <div class="mini-card-desc">Home Assistant entegrasyonu, MQTT broker kurulumu ve röle kontrolü. Üç haftalık sürecin notları.</div>
+          <div class="mini-card-read">10 dk · Orta seviye</div>
         </a>
-        <div class="nav-links">
-            <a href="#it-sistem">IT & Sistem</a>
-            <a href="#yazilim-erp">Yazılım & ERP</a>
-            <a href="#elektronik">Elektronik & PCB</a>
-            <a href="#iletisim">İletişim</a>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <h1>Sistemleri İnşa Et,<br><span>Donanımı Üret.</span></h1>
-        <p>Ben Emre Cihan. Kurumsal IT altyapıları, ERP entegrasyonları ve PCB düzeyinde endüstriyel elektronik çözümleri üzerine çalışıyorum.</p>
-    </header>
-
-    <main>
-        <section id="it-sistem" class="section">
-            <div class="section-header">
-                <span class="section-tag">Kategori 01</span>
-                <h2 class="section-title">IT & Sistem Yönetimi</h2>
-            </div>
-            
-            <div class="grid">
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Sistem Mimarisi</span>
-                    <h3 class="card-title">Windows Server Event ID 1053 Kesin Çözümü</h3>
-                    <p class="card-summary">Servislerin zamanında başlamaması sonucu oluşan timeout hatalarının Registry ile kalıcı olarak giderilmesi.</p>
-                    
-                    <div class="card-full-content">
-                        <p>Windows Server ortamlarında, özellikle ağır ERP servisleri veya özel yazılımlar çalıştırırken en sık karşılaşılan sorunlardan biri <b>Event ID 1053</b> hatasıdır. Sistem, servisin 30 saniye içinde yanıt vermesini bekler, vermezse servisi durdurur.</p>
-                        <h4>Çözüm Adımları:</h4>
-                        <ul>
-                            <li><code>Regedit</code> (Kayıt Defteri Düzenleyicisi) açın.</li>
-                            <li><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control</code> yoluna gidin.</li>
-                            <li>Sağ tıklayıp yeni bir <b>DWORD (32-bit) Value</b> oluşturun ve adını <code>ServicesPipeTimeout</code> yapın.</li>
-                            <li>Değer verisini Decimal (Ondalık) seçip <b>60000</b> (60 saniye) veya <b>120000</b> (120 saniye) yapın.</li>
-                            <li>Sunucuyu yeniden başlatın.</li>
-                        </ul>
-                        <p>Bu müdahale, Mikro API gibi geç yüklenen servislerin hata vermeden ayağa kalkmasını sağlar.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Ağ Güvenliği</span>
-                    <h3 class="card-title">WatchGuard IPS ve SQL Injection False-Positive Yönetimi</h3>
-                    <p class="card-summary">Firewall'un yasal SQL trafiğini saldırı (Signature 1058077) olarak algılamasını engelleme yöntemleri.</p>
-                    <div class="card-full-content">
-                        <p>Kurumsal ağlarda WatchGuard gibi UTM cihazları kullanırken, içerideki özel yazılımların veritabanına attığı kompleks SQL sorguları, IPS (Intrusion Prevention System) tarafından <b>SQL Injection</b> saldırısı olarak yorumlanabilir.</p>
-                        <p>Özellikle <code>Signature ID: 1058077</code> alarmı alıyorsanız, kaynağın kendi iç sunucunuz olup olmadığını kontrol etmelisiniz. Eğer trafik güvenliyse, WatchGuard Policy Manager üzerinden IPS ayarlarına girip bu spesifik ID için bir <b>Exception (İstisna)</b> kuralı yazarak ağ akışını kesintisiz hale getirebilirsiniz.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Sanallaştırma</span>
-                    <h3 class="card-title">Proxmox VE Üzerinde Nginx Proxy Manager (NPM) Mimarisi</h3>
-                    <p class="card-summary">LXC container kullanarak local ağdaki servisleri SSL sertifikası ile dış dünyaya açmak.</p>
-                    <div class="card-full-content">
-                        <p>Proxmox sanallaştırma ortamında kaynak tüketimini minimumda tutmak için sanal makineler (VM) yerine Linux Containers (LXC) kullanmak en verimli yoldur.</p>
-                        <h4>Neden Nginx Proxy Manager?</h4>
-                        <p>Ağınızda çalışan ERP arayüzü, IoT dashboard'ları veya şirket içi web sitelerini tek bir 80/443 portu üzerinden, üstelik otomatik Let's Encrypt SSL sertifikaları alarak dışarı açmanızı sağlar. Docker üzerinden bir LXC içine kurularak saniyeler içinde ayağa kaldırılabilir.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Veritabanı Yönetimi</span>
-                    <h3 class="card-title">Uzak SQL Server Erişimi İçin Güvenli Yapılandırma</h3>
-                    <p class="card-summary">SQL Server'ı dışarıdan erişime açarken alınması gereken güvenlik ve yetkilendirme tedbirleri.</p>
-                    <div class="card-full-content">
-                        <p>Bir SQL Server'ı dış dünyadan erişilebilir hale getirmek büyük bir güvenlik riskidir. Sadece Port 1433'ü modeme yönlendirmek yeterli değildir.</p>
-                        <h4>Best Practice Uygulamaları:</h4>
-                        <ul>
-                            <li><b>Port Değişimi:</b> Varsayılan 1433 portunu, tahmin edilemez (örn: 54932) bir porta taşıyın.</li>
-                            <li><b>SA Hesabını Kapatın:</b> `sa` hesabı bruteforce saldırılarının ilk hedefidir. Bu hesabı devre dışı bırakıp özel yetkili bir hesap oluşturun.</li>
-                            <li><b>IP Kısıtlaması:</b> Firewall üzerinden SQL portuna erişimi sadece bilinen statik IP adreslerine izin verecek şekilde (Whitelist) kısıtlayın.</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Sistem Yönetimi</span>
-                    <h3 class="card-title">Active Directory Çoklu Şube Optimizasyonu</h3>
-                    <p class="card-summary">Active Directory Sites and Services ile farklı lokasyonlar arası replikasyon trafiğini düzenleme.</p>
-                    <div class="card-full-content">
-                        <p>Birden fazla fabrikası veya ofisi olan kurumlarda Active Directory yapısı düzgün kurulmazsa, gereksiz ağ trafiği hatları tıkayabilir. <b>Sites and Services</b> menüsü üzerinden her şubenin Subnet'ini belirlemek, kullanıcıların kendi lokasyonlarındaki Domain Controller (DC) üzerinden oturum açmasını sağlar. Bu sayede WAN hatları gereksiz kimlik doğrulama paketleriyle meşgul edilmez.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="yazilim-erp" class="section bg-alt">
-            <div class="section-header">
-                <span class="section-tag">Kategori 02</span>
-                <h2 class="section-title">Yazılım & ERP Geliştirme</h2>
-            </div>
-            
-            <div class="grid">
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">ERP Entegrasyon</span>
-                    <h3 class="card-title">Mikro ERP Masaüstü API ve SQL Bağlantı Sorunları</h3>
-                    <p class="card-summary">Mikro Desktop API servisinin çalışmaması ve Timeout hatalarının giderilmesi.</p>
-                    <div class="card-full-content">
-                        <p>Mikro ERP kullanan işletmelerde, dış yazılımların (B2B, CRM) ERP ile haberleşmesini sağlayan Masaüstü API servisleri bazen SQL Server ile olan bağlantı kopmaları yüzünden kilitlenebilir.</p>
-                        <p>Çözüm için öncelikle Windows Hizmetleri (Services.msc) üzerinden API servisinin "Kurtarma" (Recovery) sekmesine gidip, 1. ve 2. hatalarda servisin otomatik yeniden başlatılmasını sağlayın. Ayrıca SQL üzerindeki bağlantı havuzu (Connection Pool) ayarlarının dolup dolmadığını SQL Profiler ile izleyin.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Veri Analizi</span>
-                    <h3 class="card-title">Python ile BIST-30 Verisi Çekme ve Algoritmik Analiz</h3>
-                    <p class="card-summary">Finansal piyasa verilerini Python kütüphaneleri ile otomatik işleyerek arbitraj hesaplama.</p>
-                    <div class="card-full-content">
-                        <p>Borsa İstanbul (BIST-30) verilerini analiz etmek ve otomatik işlem stratejileri (arbitraj) geliştirmek için Python kusursuz bir araçtır.</p>
-                        <p><code>pandas</code> ve <code>ta-lib</code> kütüphanelerini kullanarak gelen canlı veriler üzerinde anlık Hareketli Ortalama (MA), RSI ve MACD gibi teknik indikatörleri hesaplayabilirsiniz. Doğru bir WebSocket mimarisi kurulduğunda milisaniyeler içinde fırsat yakalayan botlar geliştirmek mümkündür.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Web Mimarisi</span>
-                    <h3 class="card-title">B2B Platformları İçin React.js ve Node.js Mimarisi</h3>
-                    <p class="card-summary">Kurumsal müşterilere hitap eden hızlı, güvenli ve ölçeklenebilir bayi portalı tasarımı.</p>
-                    <div class="card-full-content">
-                        <p>Modern B2B (Business to Business) platformları artık klasik MVC yapıları yerine, Frontend'de <b>React.js</b>, Backend'de ise <b>Node.js (Express)</b> kullanılarak inşa ediliyor.</p>
-                        <p>Bu yapının en büyük avantajı, ERP sistemleri ile API üzerinden çok hızlı asenkron iletişim kurabilmesidir. JWT (JSON Web Token) ile sağlanan oturum yönetimi ve kurumsal yetkilendirme (Role-Based Access Control) sayesinde bayiler sadece kendi siparişlerini ve cari hesaplarını güvenle yönetebilir.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Performans</span>
-                    <h3 class="card-title">Büyük Veritabanlarında SQL Sorgu Optimizasyonu</h3>
-                    <p class="card-summary">Veritabanı şişmeleri, Indexing stratejileri ve Execution Plan analizi ile hızlandırma.</p>
-                    <div class="card-full-content">
-                        <p>ERP sistemleri yavaşlıyorsa sorun genellikle donanım değil, yanlış yazılmış SQL sorguları veya eksik indekslerdir (Index).</p>
-                        <h4>Nereden Başlamalı?</h4>
-                        <p>SQL Server Management Studio'da <b>Include Actual Execution Plan</b> özelliğini açarak sorgunuzun nerede takıldığını (Table Scan vs Index Scan) görün. Sık <code>WHERE</code> ve <code>JOIN</code> yapılan kolonlara Non-Clustered Index atamak, saniyeler süren sorguları milisaniyelere düşürebilir.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Yazılım Ürünü</span>
-                    <h3 class="card-title">DomainMonitorX: Akıllı Takip Sistemi Geliştirme</h3>
-                    <p class="card-summary">Yüzlerce kurumsal domain ve lisansın bitiş tarihlerini otomatik takip eden yazılım projem.</p>
-                    <div class="card-full-content">
-                        <p>IT yöneticilerinin en büyük kabusu, unutulan bir domain veya SSL sertifikası süresinin bitmesidir. Bu problemi çözmek için geliştirdiğim <b>DomainMonitorX</b> mimarisi, arka planda çalışan zamanlanmış görevler (Cron Jobs) ve Whois API'leri sayesinde bitiş tarihlerini önceden tespit eder.</p>
-                        <p>Sistem, süre bitimine 30, 15 ve 3 gün kala IT ekibine otomatik e-posta, SMS veya Microsoft Teams üzerinden webhook ile bildirim göndererek kesintilerin önüne geçer.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="elektronik" class="section">
-            <div class="section-header">
-                <span class="section-tag">Kategori 03</span>
-                <h2 class="section-title">Elektronik & Endüstriyel Üretim</h2>
-            </div>
-            
-            <div class="grid">
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Devre Tasarımı</span>
-                    <h3 class="card-title">PCB Tasarımında Differential Pair (Diferansiyel Çift) Kullanımı</h3>
-                    <p class="card-summary">Altium Designer gibi araçlarda yüksek hızlı sinyal bütünlüğünü koruma kuralları.</p>
-                    <div class="card-full-content">
-                        <p>USB, HDMI veya Ethernet gibi yüksek frekanslı sinyaller PCB üzerinde taşınırken <b>Differential Pair</b> (Diferansiyel Çift) tekniği kullanılır.</p>
-                        <p>İki hat arasındaki sinyaller birbirinin tam tersi (faz farkı) olduğu için, dışarıdan gelen elektromanyetik gürültüler (EMI) her iki hata eşit etki eder. Alıcı entegre, bu iki sinyalin farkını hesapladığında gürültü matematiksel olarak sıfırlanmış olur. Çizim yaparken hatların aynı uzunlukta (Length Matching) olmasına çok dikkat edilmelidir.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Üretim & Tamir</span>
-                    <h3 class="card-title">Endüstriyel Elektronik Kartlarda Soğuk Lehim Çözümü</h3>
-                    <p class="card-summary">SMD bileşenlerde titreşim veya ısı farklılıkları kaynaklı oksitlenme sorunları.</p>
-                    <div class="card-full-content">
-                        <p>Endüstriyel makinelerdeki elektronik kartlar yoğun titreşime ve yüksek ısı farklılıklarına maruz kalır. Bu durum zamanla <b>Soğuk Lehim (Cold Solder)</b> denilen mikro çatlakların oluşmasına sebep olur.</p>
-                        <p>Çıplak gözle zor görülen bu arızalar makinenin aralıklı olarak durmasına neden olur. Çözüm için kartın mikroskop altında incelenmesi, şüpheli SMD bileşenlerin kaliteli flux (lehim pastası) ile yeniden Reflow istasyonlarında ısıtılarak lehim tazelemesi yapılması şarttır.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Gömülü Sistemler</span>
-                    <h3 class="card-title">ESP32 ve RS485 ile Modbus Okuma (Endüstri 4.0)</h3>
-                    <p class="card-summary">Fabrikadaki eski nesil PLC ve sensör verilerini Wi-Fi üzerinden buluta taşıma.</p>
-                    <div class="card-full-content">
-                        <p>Sensör verilerini dijitalleştirmek (Endüstri 4.0) için eski makineleri değiştirmeye gerek yoktur. <b>RS485 Modbus</b> protokolü ile konuşan herhangi bir cihaz, uygun bir MAX485 entegresi ve <b>ESP32</b> mikrokontrolcüsü kullanılarak akıllı hale getirilebilir.</p>
-                        <p>ESP32, verileri Modbus üzerinden seri porttan okur ve içindeki dahili Wi-Fi modülü ile MQTT protokolü üzerinden merkezi sunucudaki bir veritabanına (Örn: InfluxDB) aktarır.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Donanım Projesi</span>
-                    <h3 class="card-title">Solar Sensörlü Endüstriyel Aydınlatma Ar-Ge Süreci</h3>
-                    <p class="card-summary">Güneş enerjisi ve lityum pil yönetim sistemleri (BMS) entegrasyon projemiz.</p>
-                    <div class="card-full-content">
-                        <p>Dış mekan ve fabrika çevreleri için bağımsız çalışabilen solar aydınlatma sistemleri tasarlarken en kritik bileşen <b>Pil Yönetim Sistemidir (BMS)</b>.</p>
-                        <p>Solar panelden gelen değişken voltajı MPPT (Maximum Power Point Tracking) algoritması ile işleyerek lityum pilleri en verimli şekilde şarj eden bir devre tasarımı yaptık. Ayrıca PIR hareket sensörleri ile gereksiz enerji tüketimini önleyerek batarya ömrünü maksimuma çıkardık.</p>
-                    </div>
-                </article>
-
-                <article class="card" onclick="openModal(this)">
-                    <span class="card-date">Üretim Günlüğü</span>
-                    <h3 class="card-title">ODSAN: İlk Endüstriyel PCB Prototipimiz</h3>
-                    <p class="card-summary">Kendi markamız ODSAN altında tasarladığımız kontrol kartının hikayesi.</p>
-                    <div class="card-full-content">
-                        <p>Yıllarca başkalarının sistemlerini yönettikten sonra, sahada gördüğümüz eksikleri kapatmak için donanım üretmeye karar verdik.</p>
-                        <p><b>ODSAN</b> markası altında geliştirdiğimiz ilk endüstriyel otomasyon kartının şema çizimi (schematics), PCB dizgisi ve ilk Gerber dosyalarının üreticiden gelme süreci oldukça heyecan vericiydi. Hem yazılımı hem de donanımı tek çatı altında buluşturan bu proje, HEC'in üretim vizyonunun ilk adımıdır.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="iletisim" class="section bg-alt" style="padding-bottom: 80px; border-radius: 20px;">
-            <div class="section-header" style="text-align: center;">
-                <h2 class="section-title">Projeleriniz İçin İletişime Geçin</h2>
-                <p style="color: var(--text-muted); margin-top: 10px;">Danışmanlık, IT sorunları veya elektronik üretim ihtiyaçlarınız için yazabilirsiniz.</p>
-            </div>
-            
-            <form class="contact-form" style="margin: 0 auto;">
-                <input type="text" class="form-input" placeholder="Adınız Soyadınız" required>
-                <input type="email" class="form-input" placeholder="Kurumsal E-Posta Adresiniz" required>
-                <textarea class="form-input" rows="5" placeholder="Hangi konuda destek almak istiyorsunuz? (IT, Yazılım, Donanım)" required></textarea>
-                <button type="submit" class="btn-submit">Mesajı Gönder</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 HEC Engineering | Emre Cihan. Kod ve Donanım Birlikte Çalışır.</p>
-    </footer>
-
-    <div id="articleModal" class="modal-overlay" onclick="closeModalOutside(event)">
-        <div class="modal-box">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            
-            <span id="modal-meta"></span>
-            <h2 id="modal-title">Başlık Buraya Gelecek</h2>
-            <div id="modal-body">İçerik buraya gelecek...</div>
-        </div>
+        <a href="/elektronik/pcb-ground-plane" class="mini-card">
+          <span class="mini-card-tag">PCB · KiCad · EMI</span>
+          <div class="mini-card-title">PCB'de Ground Plane Neden Bu Kadar Önemli?</div>
+          <div class="mini-card-desc">EMI problemlerinden güç gürültüsüne kadar ground plane'in neden olmazsa olmaz olduğunu test ettiğim devrelerle anlattım.</div>
+          <div class="mini-card-read">7 dk · Başlangıç</div>
+        </a>
+        <a href="/elektronik/lipo-sarj" class="mini-card">
+          <span class="mini-card-tag">TP4056 · LiPo · Güç</span>
+          <div class="mini-card-title">TP4056 ile LiPo Şarj Devresi Tasarımı</div>
+          <div class="mini-card-desc">TP4056'nın datasheet'ini baştan okudum, DW01A koruma entegrasyonu ve PCB layout ipuçları.</div>
+          <div class="mini-card-read">8 dk · Orta seviye</div>
+        </a>
+        <a href="/elektronik/arduino-i2c-hata" class="mini-card">
+          <span class="mini-card-tag">Arduino · I2C · Debug</span>
+          <div class="mini-card-title">Arduino I2C Haberleşmesinde Sık Yapılan Hatalar</div>
+          <div class="mini-card-desc">Pull-up dirençlerinden clock stretching'e, saatlerce debug ettiğim sorunların listesi ve çözümleri.</div>
+          <div class="mini-card-read">6 dk · Başlangıç</div>
+        </a>
+        <a href="/elektronik/easyeda-kicad" class="mini-card">
+          <span class="mini-card-tag">EasyEDA · KiCad · Araç</span>
+          <div class="mini-card-title">EasyEDA'dan KiCad'a Geçiş — Neden Geçtim?</div>
+          <div class="mini-card-desc">İkisini de ciddi projelerde kullandım. Farklar, artılar, eksiler ve hangisi için ne kullanmalısın.</div>
+          <div class="mini-card-read">5 dk · Başlangıç</div>
+        </a>
+        <a href="/elektronik/jlcpcb-siparis" class="mini-card">
+          <span class="mini-card-tag">JLCPCB · Üretim · SMD</span>
+          <div class="mini-card-title">JLCPCB'den PCB ve SMD Montaj Siparişi Vermek</div>
+          <div class="mini-card-desc">Gerber dosyalarından BOM hazırlamaya, LCSC component seçimine kadar adım adım sipariş süreci.</div>
+          <div class="mini-card-read">9 dk · Başlangıç</div>
+        </a>
+      </div>
+      <div class="post-list">
+        <a href="/elektronik/433mhz-rf" class="post-item"><span class="post-num">07</span><div><span class="post-item-cat">Elektronik · RF</span><div class="post-item-title">433 MHz RF Modül ile Kablosuz Veri Gönderme</div><div class="post-item-excerpt">RC-Switch kütüphanesi, sinyal mesafesi ve gürültü problemleri.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/oled-display" class="post-item"><span class="post-num">08</span><div><span class="post-item-cat">Elektronik · Ekran</span><div class="post-item-title">0.96" OLED Ekranı ESP32 ile Kullanmak — SSD1306</div><div class="post-item-excerpt">Adafruit kütüphanesi, font boyutları ve bellek optimizasyonu.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/buck-converter" class="post-item"><span class="post-num">09</span><div><span class="post-item-cat">Elektronik · Güç</span><div class="post-item-title">Buck Converter Tasarımı — MP2307 ile 5V Regülatör PCB</div><div class="post-item-excerpt">İndüktör seçimi, kondansatör hesabı ve termal yönetim.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/pcb-hata-listesi" class="post-item"><span class="post-num">10</span><div><span class="post-item-cat">Elektronik · PCB</span><div class="post-item-title">PCB Tasarlarken Yaptığım 12 Hata — Üretimde Fark Ettim</div><div class="post-item-excerpt">Pad genişliklerinden via boyutlarına, pahalı dersler.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/iot-mqtt" class="post-item"><span class="post-num">11</span><div><span class="post-item-cat">Elektronik · IoT</span><div class="post-item-title">MQTT Nedir, Neden IoT Projelerinde Kullanmalısın?</div><div class="post-item-excerpt">Pub/sub modeli, broker kurulumu ve QoS seviyeleri.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/wemos-d1" class="post-item"><span class="post-num">12</span><div><span class="post-item-cat">Elektronik · WiFi</span><div class="post-item-title">Wemos D1 Mini ile Hızlı Prototip — Sıfırdan HTTP Sunucu</div><div class="post-item-excerpt">ESP8266 tabanlı bu küçük kartla on dakikada web sunucu.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/nrf24l01" class="post-item"><span class="post-num">13</span><div><span class="post-item-cat">Elektronik · RF</span><div class="post-item-title">nRF24L01 ile İki Arduino Arasında İki Yönlü Haberleşme</div><div class="post-item-excerpt">SPI bağlantısı, PA+LNA versiyonunun farkları ve mesafe testleri.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/atmega328-standalone" class="post-item"><span class="post-num">14</span><div><span class="post-item-cat">Elektronik · AVR</span><div class="post-item-title">ATmega328P'yi Breadboard'da Standalone Çalıştırmak</div><div class="post-item-excerpt">Arduino bootloader, 16 MHz kristal ve minimal devre şeması.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/elektronik/pir-sensoru" class="post-item"><span class="post-num">15</span><div><span class="post-item-cat">Elektronik · Sensör</span><div class="post-item-title">PIR Sensörü Nasıl Çalışır? HC-SR501 Detaylı İnceleme</div><div class="post-item-excerpt">Sensitivity ve time delay potansiyometre ayarları, false trigger problemleri.</div></div><span class="pi-arrow">→</span></a>
+      </div>
+      <div style="margin-top:16px"><a href="/elektronik" class="btn-line" style="font-size:.8rem;padding:8px 18px">Tüm elektronik yazıları →</a></div>
     </div>
 
-    <script>
-        // Karta tıklandığında çalışacak fonksiyon
-        function openModal(cardElement) {
-            // Tıklanan kartın içindeki bilgileri seç
-            const title = cardElement.querySelector('.card-title').innerText;
-            const meta = cardElement.querySelector('.card-date').innerText;
-            const contentHTML = cardElement.querySelector('.card-full-content').innerHTML;
+    <!-- IT -->
+    <div class="cat-section">
+      <div class="cat-header">
+        <div class="cat-icon-wrap" aria-hidden="true">🖥</div>
+        <div class="cat-header-text"><h3>IT & Sistem Yönetimi</h3><span>13 yazı · Sunucu, AD, altyapı</span></div>
+      </div>
+      <div class="post-list">
+        <a href="/it/active-directory-audit" class="post-item"><span class="post-num">01</span><div><span class="post-item-cat">IT · Active Directory</span><div class="post-item-title">Active Directory Audit Log Kurulumu ve Olay Analizi</div><div class="post-item-excerpt">Hangi Event ID'lere bakmalısın, PowerShell ile log sorguları ve uyarı sistemi.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/it/outlook-search-fix" class="post-item"><span class="post-num">02</span><div><span class="post-item-cat">IT · Outlook</span><div class="post-item-title">Outlook Arama Neden Çalışmıyor? Kalıcı Çözüm</div><div class="post-item-excerpt">OST bozulması, Windows Search servisi ve index rebuild adımları.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/it/sunucu-mimarisi" class="post-item"><span class="post-num">03</span><div><span class="post-item-cat">IT · Sunucu</span><div class="post-item-title">Küçük İşletmeler İçin Doğru Sunucu Mimarisi</div><div class="post-item-excerpt">Fiziksel mi, VM mi, cloud mı? Her seçeneğin maliyeti ve yönetim yükü.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/it/event-log-analiz" class="post-item"><span class="post-num">04</span><div><span class="post-item-cat">IT · Windows</span><div class="post-item-title">Windows Event Log — Bilmen Gereken Kritik Event ID'ler</div><div class="post-item-excerpt">4624, 4625, 4648, 4720… ve ne anlama geldikleri.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/it/dns-sorunlari" class="post-item"><span class="post-num">05</span><div><span class="post-item-cat">IT · DNS</span><div class="post-item-title">Kurumsal Ağda DNS Sorunlarını Adım Adım Debug Etmek</div><div class="post-item-excerpt">nslookup ve dig ile tanı, split-brain DNS ve zone transfer sorunları.</div></div><span class="pi-arrow">→</span></a>
+      </div>
+      <div style="margin-top:16px"><a href="/it-sistem" class="btn-line" style="font-size:.8rem;padding:8px 18px">Tüm IT yazıları →</a></div>
+    </div>
 
-            // Modal içindeki yerlere bu bilgileri yazdır
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-meta').innerText = meta;
-            document.getElementById('modal-body').innerHTML = contentHTML;
+    <!-- YAZILIM -->
+    <div class="cat-section">
+      <div class="cat-header">
+        <div class="cat-icon-wrap" aria-hidden="true">⚙️</div>
+        <div class="cat-header-text"><h3>Yazılım & ERP</h3><span>10 yazı · Backend, SQL, API</span></div>
+      </div>
+      <div class="post-list">
+        <a href="/yazilim/sql-execution-plan" class="post-item"><span class="post-num">01</span><div><span class="post-item-cat">Yazılım · SQL</span><div class="post-item-title">SQL Execution Plan Okumak — Gerçek Örneklerle</div><div class="post-item-excerpt">Index scan vs seek, nested loop'tan hash join'a, sorgu maliyetini düşürme.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/yazilim/erp-performans" class="post-item"><span class="post-num">02</span><div><span class="post-item-cat">Yazılım · ERP</span><div class="post-item-title">ERP Sistemlerinde Performans Düşüşünün Gerçek Sebepleri</div><div class="post-item-excerpt">Yanlış index, büyüyen log dosyaları ve n+1 sorgu problemi.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/yazilim/nodejs-api-mimari" class="post-item"><span class="post-num">03</span><div><span class="post-item-cat">Yazılım · Node.js</span><div class="post-item-title">B2B Projeler için Node.js REST API Mimarisi</div><div class="post-item-excerpt">Katmanlı yapı, middleware organizasyonu ve hata yönetimi.</div></div><span class="pi-arrow">→</span></a>
+        <a href="/yazilim/domain-monitor" class="post-item"><span class="post-num">04</span><div><span class="post-item-cat">Yazılım · Proje</span><div class="post-item-title">DomainMonitorX — Domain Süre Takip Aracı Nasıl Yaptım?</div><div class="post-item-excerpt">WHOIS entegrasyonu, cron job'lar ve bildirim sistemi.</div></div><span class="pi-arrow">→</span></a>
+      </div>
+      <div style="margin-top:16px"><a href="/yazilim" class="btn-line" style="font-size:.8rem;padding:8px 18px">Tüm yazılım yazıları →</a></div>
+    </div>
 
-            // Modalı görünür yap ve sayfanın kaymasını engelle
-            document.getElementById('articleModal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; 
-        }
+  </div>
 
-        // Çarpı butonuna basınca modalı kapat
-        function closeModal() {
-            document.getElementById('articleModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Sayfa kaymasını geri aç
-        }
+  <!-- SIDEBAR -->
+  <aside class="side-col" aria-label="Yan panel">
+    <div class="side-section">
+      <div class="newsletter-mini">
+        <h3>Yeni yazıları e-posta ile al</h3>
+        <p>Haftada bir ya da iki, yeni bir şey paylaştığımda haber vereyim. Başka bir şey yok.</p>
+        <form class="nl-row" onsubmit="handleSub(event)">
+          <label for="nl-email" class="sr-only">E-posta adresiniz</label>
+          <input type="email" id="nl-email" placeholder="e-posta@adresin.com" required autocomplete="email"/>
+          <button type="submit" id="nl-btn">Abone ol</button>
+        </form>
+      </div>
+    </div>
 
-        // Pencerenin dışındaki karanlık alana tıklayınca modalı kapat
-        function closeModalOutside(event) {
-            const modalOverlay = document.getElementById('articleModal');
-            if (event.target === modalOverlay) {
-                closeModal();
-            }
-        }
-    </script>
+    <div class="side-section">
+      <div class="side-title">Projelerim</div>
+      <div class="project-list">
+        <a href="/projeler/solar-lamba" class="proj-chip"><div class="proj-chip-icon">☀️</div><div><div class="proj-chip-name">Solar Motion Lamp</div><div class="proj-chip-sub">PCB · Gömülü C · PIR</div></div><span class="proj-chip-status st-live">Ürün</span></a>
+        <a href="/projeler/domainmonitorx" class="proj-chip"><div class="proj-chip-icon">🌐</div><div><div class="proj-chip-name">DomainMonitorX</div><div class="proj-chip-sub">Node.js · WHOIS · Cron</div></div><span class="proj-chip-status st-live">Aktif</span></a>
+        <a href="/projeler/smartdocclassifier" class="proj-chip"><div class="proj-chip-icon">📄</div><div><div class="proj-chip-name">SmartDocClassifier</div><div class="proj-chip-sub">Python · OCR · ML</div></div><span class="proj-chip-status st-wip">Geliştirmede</span></a>
+        <a href="/projeler/tesla-bot" class="proj-chip"><div class="proj-chip-icon">⚡</div><div><div class="proj-chip-name">Tesla Stok Botu</div><div class="proj-chip-sub">Python · Telegram · Scraping</div></div><span class="proj-chip-status st-live">Aktif</span></a>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Konular</div>
+      <div class="tag-cloud">
+        <a href="/etiket/pcb" class="tag-pill big">PCB Tasarımı</a>
+        <a href="/etiket/esp32" class="tag-pill big">ESP32</a>
+        <a href="/etiket/iot" class="tag-pill big">IoT</a>
+        <a href="/etiket/arduino" class="tag-pill">Arduino</a>
+        <a href="/etiket/kicad" class="tag-pill">KiCad</a>
+        <a href="/etiket/gomulu" class="tag-pill">Gömülü Sistemler</a>
+        <a href="/etiket/mqtt" class="tag-pill">MQTT</a>
+        <a href="/etiket/lipo" class="tag-pill">LiPo / Güç</a>
+        <a href="/etiket/active-directory" class="tag-pill">Active Directory</a>
+        <a href="/etiket/sql" class="tag-pill">SQL</a>
+        <a href="/etiket/erp" class="tag-pill">ERP</a>
+        <a href="/etiket/nodejs" class="tag-pill">Node.js</a>
+        <a href="/etiket/windows" class="tag-pill">Windows Server</a>
+        <a href="/etiket/jlcpcb" class="tag-pill">JLCPCB</a>
+        <a href="/etiket/rf" class="tag-pill">RF · 433MHz</a>
+        <a href="/etiket/avr" class="tag-pill">AVR · ATmega</a>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Arşiv</div>
+      <ul class="archive-list">
+        <li class="archive-item"><a href="/arsiv/2025">2025</a><span class="archive-count">18</span></li>
+        <li class="archive-item"><a href="/arsiv/2024">2024</a><span class="archive-count">21</span></li>
+        <li class="archive-item"><a href="/arsiv/2023">2023</a><span class="archive-count">8</span></li>
+      </ul>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Takip et</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a href="/rss.xml" class="btn-line" style="font-size:.75rem;padding:7px 14px;display:flex;align-items:center;gap:7px">📡 RSS Feed</a>
+        <a href="https://linkedin.com/in/hasanemrecihan" rel="noopener noreferrer" class="btn-line" style="font-size:.75rem;padding:7px 14px;display:flex;align-items:center;gap:7px">🔗 LinkedIn</a>
+        <a href="https://github.com/hasanemrecihan" rel="noopener noreferrer" class="btn-line" style="font-size:.75rem;padding:7px 14px;display:flex;align-items:center;gap:7px">💻 GitHub</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- ABOUT -->
+<section class="about-strip" aria-labelledby="about-h">
+  <div class="about-inner">
+    <div class="about-avatar" aria-hidden="true">HE</div>
+    <div class="about-text">
+      <h2 id="about-h">Hasan Emre Cihan <small>/ emrecihan.com.tr</small></h2>
+      <p>Sistem yöneticisiyim, ama esas olarak elektronikle ilgileniyorum. Küçüklükten beri devrelerle, bozuk cihazlarla uğraşmaktan keyif alıyorum. Şimdi bu iki dünyayı — IT altyapısı ve donanım geliştirme — bir arada götürmeye çalışıyorum. Buradaki yazılar ne tam akademik ne de çok basit; ikisi arasında bir yerde.</p>
+      <div class="about-pills">
+        <a href="/hakkimda" class="about-pill">Hakkımda</a>
+        <a href="/iletisim" class="about-pill">İletişim</a>
+        <a href="/projeler" class="about-pill">Tüm projeler</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <p>© 2025 <a href="/">Hasan Emre Cihan</a> — emrecihan.com.tr</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/rss.xml">RSS</a>
+    <a href="/sitemap.xml">Sitemap</a>
+    <a href="/gizlilik">Gizlilik</a>
+    <a href="/iletisim">İletişim</a>
+  </nav>
+</footer>
+
+<script>
+  function handleSub(e) {
+    e.preventDefault();
+    const btn = document.getElementById('nl-btn');
+    btn.textContent = '✓ Tamam!';
+    btn.style.background = '#FFB347';
+    setTimeout(() => { btn.textContent = 'Abone ol'; btn.style.background = ''; e.target.reset(); }, 3000);
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; io.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.mini-card,.post-item,.proj-chip,.featured-post').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(14px)';
+    el.style.transition='opacity .45s ease,transform .45s ease,border-color .2s';
+    io.observe(el);
+  });
+</script>
 </body>
 </html>
