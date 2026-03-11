@@ -1,246 +1,98 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dokümanlar – Hasan Emre Cihan</title>
-  <meta name="description" content="Hasan Emre Cihan'ın teknik çözümleri, proje şemaları ve rehber dokümanlarının bulunduğu klasör. PCB şemaları, IT çözüm notları ve proje dosyaları." />
-  <meta name="keywords" content="Hasan Emre Cihan dokümanlar, Emre Cihan teknik çözümler, PCB şema, IT rehber, proje dosyaları, emrecihan" />
-  <meta name="author" content="Hasan Emre Cihan" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://emrecihan.com.tr/dokumanlar" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dokümanlar – Hasan Emre Cihan" />
-  <meta property="og:description" content="Teknik çözümler, proje şemaları ve rehber dokümanlar." />
-  <meta property="og:url" content="https://emrecihan.com.tr/dokumanlar" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Dokümanlar – Hasan Emre Cihan",
-    "url": "https://emrecihan.com.tr/dokumanlar",
-    "description": "Teknik çözümler, proje şemaları ve rehber dokümanlar",
-    "author": { "@type": "Person", "name": "Hasan Emre Cihan" }
-  }
-  </script>
-
+  <meta name="description" content="Hasan Emre Cihan'ın teknik çözümleri, proje şemaları ve rehber dokümanları. PCB şemaları, IT çözüm notları ve proje dosyaları."/>
+  <meta name="keywords" content="Hasan Emre Cihan dokümanlar, Emre Cihan teknik çözümler, PCB şema, IT rehber, emrecihan"/>
+  <link rel="canonical" href="https://emrecihan.com.tr/dokumanlar"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:   #0C0A08; --surf: #171210; --acc: #F5722A;
-      --acc2: #FFB347; --dim: rgba(245,114,42,.13);
-      --txt:  #F0EBE3; --muted: #7A6A58; --faint: #3A3028;
-      --bord: #221A12; --card: #110E0B;
-    }
+    :root{--bg:#FAFAF8;--bg2:#F4F1EC;--acc:#E8621A;--acc2:#F5902E;--dim:rgba(232,98,26,.09);--txt:#1A1410;--muted:#7A6A58;--faint:#C8BBB0;--bord:#E8E0D5;--card:#FFF;--sh:0 1px 3px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.04)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--txt);font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;min-height:100vh}
-    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:999}
-    .glow{position:fixed;pointer-events:none;z-index:0;border-radius:50%;background:radial-gradient(circle,rgba(245,114,42,.09) 0%,transparent 65%);width:600px;height:600px;top:-150px;right:-100px}
-
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5%,80px);height:60px;background:rgba(12,10,8,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bord)}
-    .nav-brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:var(--txt);text-decoration:none}
-    .nav-brand span{color:var(--acc)}
-    .nav-links{display:flex;align-items:center;gap:28px}
-    .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-family:'JetBrains Mono',monospace;transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:var(--acc)}
-    @media(max-width:600px){.nav-links{display:none}}
-
-    /* BREADCRUMB */
-    .breadcrumb{position:relative;z-index:1;padding:80px clamp(20px,5%,80px) 0;max-width:860px;margin:0 auto}
-    .breadcrumb-inner{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted)}
-    .breadcrumb-inner a{color:var(--muted);text-decoration:none;transition:color .2s}
-    .breadcrumb-inner a:hover{color:var(--acc)}
-    .breadcrumb-inner span{color:var(--faint)}
-
-    /* HERO */
-    .page-hero{position:relative;z-index:1;padding:28px clamp(20px,5%,80px) 48px;max-width:860px;margin:0 auto}
-    .page-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--acc);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-    .page-eyebrow::before{content:'';width:24px;height:1px;background:var(--acc)}
-    .page-hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.2;letter-spacing:-.5px;margin-bottom:16px}
-    .page-hero h1 em{font-style:italic;color:var(--acc)}
-    .page-hero p{font-size:.95rem;color:#9A8A78;line-height:1.8;max-width:580px}
-
-    /* CONTENT */
-    .content{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 clamp(20px,5%,80px) 80px}
-
-    /* WHAT'S INSIDE */
-    .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px}
-    @media(max-width:600px){.what-grid{grid-template-columns:1fr}}
-    .what-card{background:var(--card);border:1px solid var(--bord);border-radius:10px;padding:20px;display:flex;gap:14px;align-items:flex-start}
-    .what-card:hover{border-color:rgba(245,114,42,.25)}
-    .what-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
-    .what-card h3{font-family:'Fraunces',serif;font-weight:600;font-size:.92rem;margin-bottom:5px}
-    .what-card p{font-size:.78rem;color:var(--muted);line-height:1.55}
-
-    /* NOTICE */
-    .notice{background:var(--dim);border:1px solid rgba(245,114,42,.25);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;margin-bottom:32px}
-    .notice-icon{font-size:1.1rem;flex-shrink:0;margin-top:2px}
-    .notice p{font-size:.82rem;color:#B09080;line-height:1.6}
-    .notice strong{color:var(--acc2)}
-
-    /* CTA */
-    .cta-box{background:var(--card);border:1px solid var(--bord);border-radius:14px;padding:36px 40px;text-align:center;position:relative;overflow:hidden;margin-bottom:40px}
+    body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bord);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5%,72px);height:58px}
+    .nav-brand{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--txt);text-decoration:none}.nav-brand span{color:var(--acc)}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;padding:5px 10px;border-radius:6px;transition:all .18s}
+    .nav-links a:hover{color:var(--txt);background:var(--bg2)}.nav-links a.active{color:var(--acc);background:var(--dim);font-weight:500}
+    .nav-links .nav-docs{color:var(--acc);border:1px solid rgba(232,98,26,.25)}.nav-links .nav-docs:hover{background:var(--dim)}
+    @media(max-width:640px){.nav-links{display:none}}
+    .wrap{max-width:760px;margin:0 auto;padding:0 clamp(16px,5%,72px)}
+    .page-header{padding:44px 0 32px;border-bottom:1px solid var(--bord)}
+    .breadcrumb{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint);margin-bottom:14px}
+    .breadcrumb a{color:var(--faint);text-decoration:none}.breadcrumb a:hover{color:var(--acc)}
+    .page-header h1{font-family:'Lora',serif;font-weight:600;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.3px;margin-bottom:10px}
+    .page-header h1 em{font-style:italic;color:var(--acc)}
+    .page-header p{font-size:.9rem;color:var(--muted);max-width:520px;line-height:1.7}
+    .content{padding:36px 0 60px}
+    .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+    @media(max-width:560px){.what-grid{grid-template-columns:1fr}}
+    .what-card{background:var(--card);border:1px solid var(--bord);border-radius:9px;padding:16px 18px;display:flex;gap:12px;box-shadow:var(--sh)}
+    .what-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px}
+    .what-card h3{font-family:'Lora',serif;font-weight:600;font-size:.86rem;margin-bottom:4px}
+    .what-card p{font-size:.76rem;color:var(--muted);line-height:1.5}
+    .notice{background:var(--bg2);border:1px solid var(--bord);border-radius:9px;padding:14px 18px;display:flex;gap:12px;margin-bottom:24px;font-size:.82rem;color:var(--muted);line-height:1.6}
+    .notice strong{color:var(--acc)}
+    .cta-box{background:var(--card);border:1px solid var(--bord);border-radius:12px;padding:28px;text-align:center;box-shadow:var(--sh);position:relative;overflow:hidden}
     .cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--acc),var(--acc2),transparent)}
-    .cta-box h2{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;margin-bottom:10px}
-    .cta-box p{font-size:.85rem;color:var(--muted);max-width:460px;margin:0 auto 24px;line-height:1.65}
-    .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:var(--bg);padding:13px 30px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .25s;margin-bottom:14px}
-    .cta-btn:hover{box-shadow:0 0 28px rgba(245,114,42,.4);transform:translateY(-1px)}
-    .cta-btn-icon{font-size:1.1rem}
-    .cta-note{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);display:block}
-
-    /* COUNTER */
-    .countdown{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--acc);background:var(--dim);border:1px solid rgba(245,114,42,.2);border-radius:6px;padding:6px 14px;display:inline-block;margin-bottom:24px}
-
-    /* BACK LINK */
-    .back-row{display:flex;justify-content:center;margin-top:8px}
-    .back-link{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--muted);text-decoration:none;border:1px solid var(--bord);padding:7px 18px;border-radius:100px;transition:all .2s;display:flex;align-items:center;gap:6px}
-    .back-link:hover{border-color:var(--acc);color:var(--acc)}
-
-    /* FOOTER */
-    footer{position:relative;z-index:1;border-top:1px solid var(--bord);padding:24px clamp(20px,5%,80px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    footer p{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted)}
-    footer p a{color:var(--acc);text-decoration:none}
-
-    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-    .f1{animation:fadeUp .5s .05s ease both}
-    .f2{animation:fadeUp .5s .15s ease both}
-    .f3{animation:fadeUp .5s .25s ease both}
-    .f4{animation:fadeUp .5s .35s ease both}
+    .cta-box h2{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;margin-bottom:8px}
+    .cta-box p{font-size:.83rem;color:var(--muted);max-width:400px;margin:0 auto 20px;line-height:1.65}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#fff;padding:11px 26px;border-radius:7px;text-decoration:none;font-weight:500;font-size:.88rem;transition:all .18s}
+    .cta-btn:hover{background:var(--acc2);box-shadow:0 4px 14px rgba(232,98,26,.3)}
+    .cta-note{display:block;font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--faint);margin-top:10px}
+    footer{border-top:1px solid var(--bord);padding:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint)}
+    footer p a{color:var(--muted);text-decoration:none}
+    .foot-links{display:flex;gap:16px}
+    .foot-links a{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint);text-decoration:none;transition:color .15s}
+    .foot-links a:hover{color:var(--acc)}
   </style>
 </head>
 <body>
-<div class="glow" aria-hidden="true"></div>
-
-<!-- NAV -->
-<nav role="navigation" aria-label="Ana menü">
-  <a href="/" class="nav-brand"><span>emre</span>cihan</a>
+<nav>
+  <a href="index.html" class="nav-brand"><span>emre</span>cihan</a>
   <div class="nav-links">
-    <a href="/elektronik">Elektronik</a>
-    <a href="/it-sistem">IT & Sistem</a>
-    <a href="/yazilim">Yazılım</a>
-    <a href="/projeler">Projeler</a>
-    <a href="/dokumanlar" class="active" style="color:var(--acc2)">📁 Dokümanlar</a>
-    <a href="/hakkimda">Hakkımda</a>
+    <a href="index.html">Anasayfa</a><a href="elektronik.html">Elektronik</a>
+    <a href="it-sistem.html">IT & Sistem</a><a href="yazilim.html">Yazılım</a>
+    <a href="projeler.html">Projeler</a><a href="dokumanlar.html" class="nav-docs active">📁 Dokümanlar</a>
+    <a href="hakkimda.html">Hakkımda</a>
   </div>
 </nav>
-
-<!-- BREADCRUMB -->
-<nav class="breadcrumb" aria-label="Sayfa konumu">
-  <div class="breadcrumb-inner">
-    <a href="/">Ana Sayfa</a>
-    <span>/</span>
-    <span aria-current="page">Dokümanlar</span>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="page-hero">
-  <div class="page-eyebrow f1">Kaynak Klasörü</div>
-  <h1 class="f2">Dokümanlar & <em>Teknik Dosyalar</em></h1>
-  <p class="f3">Blog yazılarında bahsettiğim çözümlerin dosyaları, proje şemaları ve kullanabileceğin rehber dokümanlar burada. Hepsi OneDrive'da açık erişimde.</p>
-</header>
-
-<!-- CONTENT -->
-<main class="content" role="main">
-
-  <!-- NE VAR? -->
-  <div class="f3">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;display:flex;align-items:center;gap:8px">
-      Klasörde neler var
-      <div style="flex:1;height:1px;background:var(--bord)"></div>
-    </div>
+<div class="wrap">
+  <header class="page-header">
+    <div class="breadcrumb"><a href="index.html">Ana Sayfa</a> / Dokümanlar</div>
+    <h1>Dokümanlar & <em>Teknik Dosyalar</em></h1>
+    <p>Blog yazılarında bahsettiğim çözümlerin dosyaları, proje şemaları ve kullanabileceğin rehberler. Hepsi OneDrive'da açık erişimde.</p>
+  </header>
+  <div class="content">
     <div class="what-grid">
-      <div class="what-card">
-        <span class="what-icon">🔌</span>
-        <div>
-          <h3>Elektronik & PCB Dosyaları</h3>
-          <p>Proje şemaları, Gerber dosyaları, KiCad kaynakları ve devre açıklamaları.</p>
-        </div>
-      </div>
-      <div class="what-card">
-        <span class="what-icon">🖥</span>
-        <div>
-          <h3>IT Çözüm Notları</h3>
-          <p>Sunucu yapılandırma rehberleri, Active Directory şablonları, event log analizleri.</p>
-        </div>
-      </div>
-      <div class="what-card">
-        <span class="what-icon">⚙️</span>
-        <div>
-          <h3>Yazılım & ERP Belgeleri</h3>
-          <p>SQL sorgu örnekleri, API dökümantasyon taslakları, mimari şemalar.</p>
-        </div>
-      </div>
-      <div class="what-card">
-        <span class="what-icon">📦</span>
-        <div>
-          <h3>Proje Arşivi</h3>
-          <p>DomainMonitorX, Solar Lamp ve diğer projelere ait kaynak dosyalar.</p>
-        </div>
-      </div>
+      <div class="what-card"><span class="what-icon">🔌</span><div><h3>Elektronik & PCB</h3><p>Proje şemaları, Gerber dosyaları ve KiCad kaynakları.</p></div></div>
+      <div class="what-card"><span class="what-icon">🖥</span><div><h3>IT Çözüm Notları</h3><p>Sunucu rehberleri, AD şablonları, event log analizleri.</p></div></div>
+      <div class="what-card"><span class="what-icon">⚙️</span><div><h3>Yazılım & ERP</h3><p>SQL örnekleri, API taslakları, mimari şemalar.</p></div></div>
+      <div class="what-card"><span class="what-icon">📦</span><div><h3>Proje Arşivi</h3><p>DomainMonitorX, Solar Lamp ve diğer proje kaynak dosyaları.</p></div></div>
     </div>
-  </div>
-
-  <!-- NOTICE -->
-  <div class="notice f3" role="note">
-    <span class="notice-icon">ℹ️</span>
-    <p>Bu klasör <strong>aktif olarak güncelleniyor</strong>. Blog yazısı yayınladığımda ilgili dosyaları buraya da ekliyorum. Bir şey eksikse veya indirmede sorun yaşarsan <a href="/iletisim" style="color:var(--acc2);text-decoration:none">iletişim</a> sayfasından yazabilirsin.</p>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta-box f4">
-    <h2>Dosyalara Git</h2>
-    <p>Tüm dokümanlar OneDrive'da herkese açık paylaşımda. İndirmek için Microsoft hesabı gerekmez.</p>
-
-    <div>
-      <a
-        href="https://terp-my.sharepoint.com/:f:/g/personal/hasanemre_cihan_teknoerp_com_tr/IgA_8hB-DGlJR62quYDqMFY1ARuoVmNsqlFoVkPozWiXr00?e=4AtytB"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="cta-btn"
-        id="onedrive-btn"
-        aria-label="OneDrive klasörünü yeni sekmede aç"
-      >
-        <span class="cta-btn-icon">📁</span>
-        OneDrive Klasörünü Aç
+    <div class="notice">
+      <span>ℹ️</span>
+      <span>Bu klasör aktif olarak güncelleniyor. Bir şey eksikse veya indirmede sorun yaşarsan <a href="hakkimda.html" style="color:var(--acc)">iletişim</a> sayfasından yazabilirsin.</span>
+    </div>
+    <div class="cta-box">
+      <h2>OneDrive Klasörünü Aç</h2>
+      <p>Tüm dosyalar herkese açık paylaşımda. Microsoft hesabı gerekmez, direkt indirebilirsin.</p>
+      <a href="https://terp-my.sharepoint.com/:f:/g/personal/hasanemre_cihan_teknoerp_com_tr/IgA_8hB-DGlJR62quYDqMFY1ARuoVmNsqlFoVkPozWiXr00?e=4AtytB" target="_blank" rel="noopener noreferrer" class="cta-btn" id="od-btn">
+        📁 Dosyalara Git
       </a>
+      <span class="cta-note" id="od-note">Yeni sekmede açılır — OneDrive / SharePoint</span>
     </div>
-    <span class="cta-note" id="cta-note">Yeni sekmede açılır — OneDrive (SharePoint)</span>
   </div>
-
-  <div class="back-row f4">
-    <a href="/" class="back-link">← Ana sayfaya dön</a>
-  </div>
-
-</main>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <p>© 2025 <a href="/">Hasan Emre Cihan</a> — emrecihan.com.tr</p>
-  <p style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted)">
-    <a href="/rss.xml" style="color:var(--muted);text-decoration:none;margin-right:16px">RSS</a>
-    <a href="/sitemap.xml" style="color:var(--muted);text-decoration:none;margin-right:16px">Sitemap</a>
-    <a href="/iletisim" style="color:var(--muted);text-decoration:none">İletişim</a>
-  </p>
-</footer>
-
+  <footer><p>© 2025 <a href="index.html">Hasan Emre Cihan</a></p><nav class="foot-links"><a href="index.html">Ana Sayfa</a><a href="hakkimda.html">Hakkımda</a><a href="projeler.html">Projeler</a></nav></footer>
+</div>
 <script>
-  // Küçük "tıklandı" feedback
-  document.getElementById('onedrive-btn').addEventListener('click', function() {
-    const note = document.getElementById('cta-note');
-    note.textContent = '✓ Açılıyor...';
-    note.style.color = '#FFB347';
-    setTimeout(() => {
-      note.textContent = 'Yeni sekmede açılır — OneDrive (SharePoint)';
-      note.style.color = '';
-    }, 3000);
+  document.getElementById('od-btn').addEventListener('click',function(){
+    const n=document.getElementById('od-note');
+    n.textContent='✓ Açılıyor...';n.style.color='var(--acc)';
+    setTimeout(()=>{n.textContent='Yeni sekmede açılır — OneDrive / SharePoint';n.style.color=''},3000);
   });
 </script>
 </body>

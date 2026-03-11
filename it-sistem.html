@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT & Sistem Yönetimi – Hasan Emre Cihan</title>
+  <meta name="description" content="Active Directory, Windows Server, Outlook sorunları, DNS, event log analizi ve IT altyapısı yönetimi üzerine teknik yazılar. Hasan Emre Cihan."/>
+  <meta name="keywords" content="Active Directory, Windows Server, IT sistem yönetimi, Outlook sorun, DNS, event log, Hasan Emre Cihan, Emre Cihan"/>
+  <link rel="canonical" href="https://emrecihan.com.tr/it-sistem"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#FAFAF8;--bg2:#F4F1EC;--acc:#E8621A;--acc2:#F5902E;--dim:rgba(232,98,26,.09);--txt:#1A1410;--muted:#7A6A58;--faint:#C8BBB0;--bord:#E8E0D5;--card:#FFF;--sh:0 1px 3px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.04)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bord);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5%,72px);height:58px}
+    .nav-brand{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--txt);text-decoration:none}.nav-brand span{color:var(--acc)}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;padding:5px 10px;border-radius:6px;transition:all .18s}
+    .nav-links a:hover{color:var(--txt);background:var(--bg2)}.nav-links a.active{color:var(--acc);background:var(--dim);font-weight:500}
+    .nav-links .nav-docs{color:var(--acc);border:1px solid rgba(232,98,26,.25)}.nav-links .nav-docs:hover{background:var(--dim)}
+    @media(max-width:640px){.nav-links{display:none}}
+    .wrap{max-width:1060px;margin:0 auto;padding:0 clamp(16px,5%,72px)}
+    .page-header{padding:44px 0 32px;border-bottom:1px solid var(--bord)}
+    .breadcrumb{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint);margin-bottom:14px}
+    .breadcrumb a{color:var(--faint);text-decoration:none}.breadcrumb a:hover{color:var(--acc)}
+    .page-header h1{font-family:'Lora',serif;font-weight:600;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.3px;margin-bottom:10px}
+    .page-header h1 em{font-style:italic;color:var(--acc)}
+    .page-header p{font-size:.9rem;color:var(--muted);max-width:520px;line-height:1.7}
+    .posts-wrap{padding:36px 0 60px}
+    .post-list{border-top:1px solid var(--bord)}
+    .post-row{display:grid;grid-template-columns:28px 1fr 16px;gap:12px;align-items:start;padding:16px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);transition:all .15s}
+    .post-row:last-child{border-bottom:none}
+    .post-row:hover .pr-title{color:var(--acc)}.post-row:hover .pr-arr{opacity:1;transform:translateX(0)}
+    .pr-n{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--faint);padding-top:4px}
+    .pr-cat{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--faint);margin-bottom:3px}
+    .pr-title{font-family:'Lora',serif;font-weight:500;font-size:.92rem;line-height:1.35;margin-bottom:4px;transition:color .15s}
+    .pr-excerpt{font-size:.78rem;color:var(--muted);line-height:1.55}
+    .pr-arr{font-size:.75rem;color:var(--acc);opacity:0;transform:translateX(-4px);transition:all .15s;padding-top:4px}
+    footer{border-top:1px solid var(--bord);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint)}
+    footer p a{color:var(--muted);text-decoration:none}
+    .foot-links{display:flex;gap:16px}
+    .foot-links a{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint);text-decoration:none;transition:color .15s}
+    .foot-links a:hover{color:var(--acc)}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand"><span>emre</span>cihan</a>
+  <div class="nav-links">
+    <a href="index.html">Anasayfa</a><a href="elektronik.html">Elektronik</a>
+    <a href="it-sistem.html" class="active">IT & Sistem</a><a href="yazilim.html">Yazılım</a>
+    <a href="projeler.html">Projeler</a><a href="dokumanlar.html" class="nav-docs">📁 Dokümanlar</a>
+    <a href="hakkimda.html">Hakkımda</a>
+  </div>
+</nav>
+<div class="wrap">
+  <header class="page-header">
+    <div class="breadcrumb"><a href="index.html">Ana Sayfa</a> / IT & Sistem Yönetimi</div>
+    <h1>IT & <em>Sistem Yönetimi</em></h1>
+    <p>Active Directory, Windows Server, sunucu altyapısı, Outlook sorunları ve kurumsal IT yönetimi üzerine notlar. Canlı ortamlardan çıkan gerçek problemler.</p>
+  </header>
+  <div class="posts-wrap">
+    <div class="post-list">
+      <a href="#" class="post-row"><span class="pr-n">01</span><div><div class="pr-cat">Active Directory</div><div class="pr-title">Active Directory Audit Log Kurulumu ve Olay Analizi</div><div class="pr-excerpt">Hangi Event ID'lere bakmalısın, PowerShell ile log sorguları ve uyarı sistemi.</div></div><span class="pr-arr">→</span></a>
+      <a href="#" class="post-row"><span class="pr-n">02</span><div><div class="pr-cat">Outlook</div><div class="pr-title">Outlook Arama Neden Çalışmıyor? Kalıcı Çözüm</div><div class="pr-excerpt">OST bozulması, Windows Search servisi ve index rebuild adımları.</div></div><span class="pr-arr">→</span></a>
+      <a href="#" class="post-row"><span class="pr-n">03</span><div><div class="pr-cat">Sunucu Mimarisi</div><div class="pr-title">Küçük İşletmeler İçin Doğru Sunucu Mimarisi</div><div class="pr-excerpt">Fiziksel mi, VM mi, cloud mı? Her seçeneğin maliyeti ve yönetim yükü.</div></div><span class="pr-arr">→</span></a>
+      <a href="#" class="post-row"><span class="pr-n">04</span><div><div class="pr-cat">Windows Event Log</div><div class="pr-title">Windows Event Log — Bilmen Gereken Kritik Event ID'ler</div><div class="pr-excerpt">4624, 4625, 4648, 4720 ve ne anlama geldikleri.</div></div><span class="pr-arr">→</span></a>
+      <a href="#" class="post-row"><span class="pr-n">05</span><div><div class="pr-cat">DNS</div><div class="pr-title">Kurumsal Ağda DNS Sorunlarını Adım Adım Debug Etmek</div><div class="pr-excerpt">nslookup ve dig ile tanı, split-brain DNS ve zone transfer sorunları.</div></div><span class="pr-arr">→</span></a>
+      <a href="#" class="post-row"><span class="pr-n">06</span><div><div class="pr-cat">Group Policy</div><div class="pr-title">Group Policy Sorunlarını Teşhis Etmek — gpresult ve rsop</div><div class="pr-excerpt">GPO çakışmaları, uygulama sıraları ve WMI filter sorunları.</div></div><span class="pr-arr">→</span></a>
+      <a href="#" class="post-row"><span class="pr-n">07</span><div><div class="pr-cat">Yedekleme</div><div class="pr-title">Küçük Ölçekli Altyapı İçin Yedekleme Stratejisi</div><div class="pr-excerpt">3-2-1 kuralı, Windows Server Backup ve ücretsiz araçlar.</div></div><span class="pr-arr">→</span></a>
+      <a href="#" class="post-row"><span class="pr-n">08</span><div><div class="pr-cat">PowerShell</div><div class="pr-title">Sistem Yöneticisi İçin 15 PowerShell Komutu</div><div class="pr-excerpt">AD sorguları, log analizi ve ağ diagnostiği için pratik scriptler.</div></div><span class="pr-arr">→</span></a>
+    </div>
+  </div>
+  <footer><p>© 2025 <a href="index.html">Hasan Emre Cihan</a></p><nav class="foot-links"><a href="index.html">Ana Sayfa</a><a href="dokumanlar.html">Dokümanlar</a><a href="hakkimda.html">Hakkımda</a></nav></footer>
+</div>
+</body>
+</html>

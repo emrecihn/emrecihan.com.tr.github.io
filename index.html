@@ -1,514 +1,395 @@
 <!DOCTYPE html>
-<html lang="tr" prefix="og: https://ogp.me/ns#">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- PRIMARY SEO -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hasan Emre Cihan – Elektronik, IT ve Yazılım Üzerine Notlar</title>
-  <meta name="description" content="Hasan Emre Cihan'ın kişisel blogu. PCB tasarımı, gömülü sistemler, IoT, IT altyapısı ve ERP üzerine deneyimlerden doğan teknik yazılar." />
-  <meta name="keywords" content="Hasan Emre Cihan, Emre Cihan, emrecihan, PCB tasarımı, gömülü sistemler, Arduino, ESP32, IoT projesi, elektronik devre, IT sistem yönetimi, Active Directory, ERP entegrasyonu, SQL optimizasyonu, Node.js" />
-  <meta name="author" content="Hasan Emre Cihan" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <link rel="canonical" href="https://emrecihan.com.tr" />
-  <meta name="theme-color" content="#0C0A08" />
-
-  <!-- OPEN GRAPH -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="tr_TR" />
-  <meta property="og:url" content="https://emrecihan.com.tr" />
-  <meta property="og:site_name" content="Hasan Emre Cihan" />
-  <meta property="og:title" content="Hasan Emre Cihan – Elektronik, IT ve Yazılım Üzerine Notlar" />
-  <meta property="og:description" content="PCB tasarımı, IoT, gömülü sistemler, IT altyapısı ve yazılım üzerine teknik yazılar." />
-  <meta property="og:image" content="https://emrecihan.com.tr/og-image.jpg" />
-
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@hasanemrecihan" />
-  <meta name="twitter:title" content="Hasan Emre Cihan – Elektronik, IT ve Yazılım" />
-  <meta name="twitter:description" content="PCB tasarımı, IoT, gömülü sistemler ve yazılım üzerine teknik yazılar." />
-
-  <!-- STRUCTURED DATA – Person -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Hasan Emre Cihan","alternateName":["Emre Cihan","H. Emre Cihan","emrecihan"],"url":"https://emrecihan.com.tr","jobTitle":"Elektronik & Yazılım Geliştiricisi","description":"PCB tasarımı, gömülü sistemler, IoT, IT altyapısı ve kurumsal yazılım alanlarında çalışan geliştirici.","knowsAbout":["PCB Tasarımı","Gömülü Sistemler","IoT","Arduino","ESP32","IT Sistem Yönetimi","Active Directory","ERP","SQL","Node.js"],"sameAs":["https://linkedin.com/in/hasanemrecihan","https://github.com/hasanemrecihan"]}
-  </script>
-
-  <!-- STRUCTURED DATA – Blog -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Blog","name":"emrecihan.com.tr","url":"https://emrecihan.com.tr","description":"Elektronik, IT ve yazılım üzerine teknik notlar","inLanguage":"tr","author":{"@type":"Person","name":"Hasan Emre Cihan"}}
-  </script>
-
+  <meta name="description" content="Hasan Emre Cihan'ın kişisel blogu. PCB tasarımı, gömülü sistemler, IoT, IT altyapısı ve ERP üzerine teknik yazılar."/>
+  <meta name="keywords" content="Hasan Emre Cihan, Emre Cihan, emrecihan, PCB tasarımı, ESP32, IoT, gömülü sistemler, IT sistem yönetimi, Active Directory, ERP, SQL"/>
+  <meta name="author" content="Hasan Emre Cihan"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://emrecihan.com.tr"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Hasan Emre Cihan","alternateName":["Emre Cihan","emrecihan"],"url":"https://emrecihan.com.tr","jobTitle":"Elektronik & Yazılım Geliştiricisi","knowsAbout":["PCB Tasarımı","Gömülü Sistemler","IoT","Arduino","ESP32","IT Sistem Yönetimi","Active Directory","ERP","SQL","Node.js"],"sameAs":["https://linkedin.com/in/hasanemrecihan","https://github.com/hasanemrecihan"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"emrecihan.com.tr","url":"https://emrecihan.com.tr","inLanguage":"tr","author":{"@type":"Person","name":"Hasan Emre Cihan"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:     #0C0A08;
-      --bg2:    #131009;
-      --bg3:    #1C1710;
-      --surf:   #171210;
-      --acc:    #F5722A;
-      --acc2:   #FFB347;
-      --amber:  #FFD580;
-      --dim:    rgba(245,114,42,.14);
-      --txt:    #F0EBE3;
-      --muted:  #7A6A58;
-      --faint:  #3A3028;
-      --bord:   #221A12;
-      --card:   #110E0B;
-    }
+    :root{--bg:#FAFAF8;--bg2:#F4F1EC;--surf:#FFF;--acc:#E8621A;--acc2:#F5902E;--dim:rgba(232,98,26,.09);--txt:#1A1410;--muted:#7A6A58;--faint:#C8BBB0;--bord:#E8E0D5;--card:#FFF;--sh:0 1px 3px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.04)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--txt);font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
-    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:999}
-    .glow{position:fixed;pointer-events:none;z-index:0;border-radius:50%;background:radial-gradient(circle,rgba(245,114,42,.1) 0%,transparent 65%);width:700px;height:700px;top:-200px;right:-150px;animation:breathe 8s ease-in-out infinite alternate}
-    @keyframes breathe{from{opacity:.6}to{opacity:1}}
+    body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
 
     /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5%,80px);height:60px;background:rgba(12,10,8,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bord)}
-    .nav-brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:var(--txt);text-decoration:none;letter-spacing:-.3px}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bord);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5%,72px);height:58px}
+    .nav-brand{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--txt);text-decoration:none;letter-spacing:-.2px}
     .nav-brand span{color:var(--acc)}
-    .nav-links{display:flex;align-items:center;gap:28px}
-    .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-family:'JetBrains Mono',monospace;transition:color .2s;letter-spacing:.3px}
-    .nav-links a:hover{color:var(--acc)}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-family:'Inter',sans-serif;padding:5px 10px;border-radius:6px;transition:all .18s}
+    .nav-links a:hover{color:var(--txt);background:var(--bg2)}
+    .nav-links a.active{color:var(--acc);background:var(--dim);font-weight:500}
+    .nav-links .nav-docs{color:var(--acc);border:1px solid rgba(232,98,26,.25)}
+    .nav-links .nav-docs:hover{background:var(--dim)}
+    .nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:6px;font-size:1.1rem;color:var(--muted)}
+    @media(max-width:640px){.nav-links{display:none}.nav-mobile{display:block}}
+
+    /* LAYOUT */
+    .wrap{max-width:1060px;margin:0 auto;padding:0 clamp(16px,5%,72px)}
 
     /* HERO */
-    .hero{position:relative;z-index:1;padding:120px clamp(20px,5%,80px) 64px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start}
-    .hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-    .hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--acc)}
-    .hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.2;letter-spacing:-.5px;margin-bottom:20px}
+    .hero{padding:52px 0 40px;border-bottom:1px solid var(--bord)}
+    .hero-inner{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+    @media(max-width:820px){.hero-inner{grid-template-columns:1fr}}
+    .hero-label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+    .hero h1{font-family:'Lora',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.25;letter-spacing:-.3px;color:var(--txt);margin-bottom:16px}
     .hero h1 em{font-style:italic;color:var(--acc)}
-    .hero-bio{font-size:.95rem;color:#A09080;line-height:1.8;max-width:520px;margin-bottom:28px}
-    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-    .htag{font-family:'JetBrains Mono',monospace;font-size:.68rem;padding:4px 10px;border-radius:4px;border:1px solid var(--bord);color:var(--muted);background:var(--surf)}
-    .htag.hot{border-color:rgba(245,114,42,.35);color:var(--acc2);background:var(--dim)}
-    .hero-links{display:flex;gap:14px;flex-wrap:wrap}
-    .btn-solid{background:var(--acc);color:var(--bg);padding:10px 22px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;transition:all .2s}
-    .btn-solid:hover{box-shadow:0 0 24px rgba(245,114,42,.4);transform:translateY(-1px)}
-    .btn-line{border:1px solid var(--bord);color:var(--muted);padding:10px 22px;border-radius:6px;text-decoration:none;font-size:.85rem;transition:all .2s}
-    .btn-line:hover{border-color:var(--acc);color:var(--acc)}
+    .hero-bio{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:22px;max-width:500px}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+    .htag{font-size:.72rem;font-family:'JetBrains Mono',monospace;padding:3px 9px;border-radius:4px;border:1px solid var(--bord);color:var(--muted);background:var(--bg2)}
+    .htag.hi{border-color:rgba(232,98,26,.3);color:var(--acc);background:var(--dim)}
+    .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+    .btn-primary{background:var(--acc);color:#fff;padding:9px 20px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:500;transition:all .18s}
+    .btn-primary:hover{background:var(--acc2);box-shadow:0 4px 14px rgba(232,98,26,.3)}
+    .btn-ghost{border:1px solid var(--bord);color:var(--muted);padding:9px 20px;border-radius:6px;text-decoration:none;font-size:.85rem;transition:all .18s}
+    .btn-ghost:hover{border-color:var(--acc);color:var(--acc)}
 
-    /* HERO SIDEBAR */
-    .hero-side{}
-    .side-card{background:var(--card);border:1px solid var(--bord);border-radius:12px;padding:22px;margin-bottom:16px}
-    .side-card-title{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
-    .side-post{display:block;padding:10px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);font-size:.82rem;line-height:1.4;transition:color .2s}
-    .side-post:last-child{border-bottom:none;padding-bottom:0}
-    .side-post:hover{color:var(--acc)}
-    .side-post-cat{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);margin-bottom:3px;display:block}
-    .side-stat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bord);font-size:.82rem}
-    .side-stat-row:last-child{border-bottom:none}
-    .side-stat-row span:last-child{font-family:'JetBrains Mono',monospace;color:var(--acc);font-size:.78rem}
+    /* HERO ASIDE */
+    .hero-aside{}
+    .aside-box{background:var(--card);border:1px solid var(--bord);border-radius:10px;padding:18px;box-shadow:var(--sh);margin-bottom:14px}
+    .aside-title{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px}
+    .aside-post{display:block;padding:9px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);font-size:.8rem;line-height:1.4;transition:color .15s}
+    .aside-post:last-child{border-bottom:none;padding-bottom:0}
+    .aside-post:hover{color:var(--acc)}
+    .aside-post-cat{display:block;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--faint);margin-bottom:2px}
+    .aside-stat{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bord);font-size:.8rem;color:var(--muted)}
+    .aside-stat:last-child{border-bottom:none}
+    .aside-stat strong{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--acc);font-weight:500}
 
-    /* MAIN LAYOUT */
-    .main-wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 clamp(20px,5%,80px) 80px;display:grid;grid-template-columns:1fr 300px;gap:60px}
+    /* MAIN GRID */
+    .main-grid{display:grid;grid-template-columns:1fr 260px;gap:48px;padding:40px 0}
+    @media(max-width:820px){.main-grid{grid-template-columns:1fr}.sidebar{display:none}}
 
-    /* Section headers */
-    .sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--bord)}
-    .sec-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;letter-spacing:-.3px;display:flex;align-items:center;gap:10px}
-    .sec-head h2::before{content:'';width:3px;height:18px;background:var(--acc);border-radius:2px}
-    .sec-head a{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);text-decoration:none;transition:color .2s}
+    /* SECTION */
+    .sec-label{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
+    .sec-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--bord);margin-bottom:20px}
+    .sec-head h2{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--txt)}
+    .sec-head a{font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .15s}
     .sec-head a:hover{color:var(--acc)}
+    .cat-block{margin-bottom:44px}
 
     /* FEATURED */
-    .featured-post{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--card);border:1px solid var(--bord);border-radius:12px;overflow:hidden;text-decoration:none;color:var(--txt);margin-bottom:32px;transition:border-color .25s,transform .25s}
-    .featured-post:hover{border-color:rgba(245,114,42,.4);transform:translateY(-2px)}
-    .feat-visual{background:linear-gradient(135deg,#1A1208,#2A1A08);display:flex;align-items:center;justify-content:center;min-height:220px;position:relative;overflow:hidden}
-    .feat-visual .circuit{width:100%;height:100%;position:absolute;inset:0;opacity:.15;background-image:linear-gradient(rgba(245,114,42,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(245,114,42,.6) 1px,transparent 1px);background-size:24px 24px}
-    .feat-visual .big-icon{font-size:3.5rem;position:relative;z-index:1;filter:drop-shadow(0 0 20px rgba(245,114,42,.5))}
-    .feat-body{padding:28px;display:flex;flex-direction:column;gap:10px}
-    .feat-label{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--acc);background:var(--dim);border:1px solid rgba(245,114,42,.25);padding:3px 9px;border-radius:100px;align-self:flex-start}
-    .feat-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;line-height:1.3}
-    .feat-body p{font-size:.84rem;color:var(--muted);line-height:1.65;flex:1}
-    .feat-meta{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--faint);padding-top:10px;border-top:1px solid var(--bord)}
-    .feat-meta span{color:var(--muted)}
-
-    /* CAT SECTION */
-    .cat-section{margin-bottom:48px}
-    .cat-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-    .cat-icon-wrap{width:36px;height:36px;border-radius:8px;background:var(--dim);border:1px solid rgba(245,114,42,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-    .cat-header-text h3{font-family:'Fraunces',serif;font-weight:600;font-size:1rem}
-    .cat-header-text span{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted)}
+    .featured{display:grid;grid-template-columns:200px 1fr;gap:0;border:1px solid var(--bord);border-radius:10px;overflow:hidden;text-decoration:none;color:var(--txt);margin-bottom:28px;box-shadow:var(--sh);transition:all .2s}
+    .featured:hover{border-color:rgba(232,98,26,.35);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+    .feat-thumb{background:linear-gradient(135deg,#FDF0E8,#FAE0C8);display:flex;align-items:center;justify-content:center;font-size:2.8rem}
+    .feat-body{padding:22px}
+    .feat-badge{display:inline-block;font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--acc);background:var(--dim);border:1px solid rgba(232,98,26,.2);padding:2px 8px;border-radius:4px;margin-bottom:10px}
+    .feat-body h3{font-family:'Lora',serif;font-weight:600;font-size:1rem;line-height:1.3;margin-bottom:8px}
+    .feat-body p{font-size:.8rem;color:var(--muted);line-height:1.6}
+    .feat-meta{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--faint);margin-top:12px;padding-top:10px;border-top:1px solid var(--bord)}
+    @media(max-width:600px){.featured{grid-template-columns:1fr}.feat-thumb{min-height:120px}}
 
     /* CARD GRID */
-    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
-    .mini-card{background:var(--card);border:1px solid var(--bord);border-radius:10px;padding:18px;text-decoration:none;color:var(--txt);transition:all .2s;display:flex;flex-direction:column;gap:8px}
-    .mini-card:hover{border-color:rgba(245,114,42,.3);transform:translateY(-2px)}
-    .mini-card-tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--acc);opacity:.8}
-    .mini-card-title{font-family:'Fraunces',serif;font-weight:600;font-size:.88rem;line-height:1.3}
-    .mini-card-desc{font-size:.75rem;color:var(--muted);line-height:1.5}
-    .mini-card-read{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:auto;padding-top:8px;border-top:1px solid var(--bord)}
+    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    @media(max-width:600px){.card-grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--bord);border-radius:9px;padding:16px;text-decoration:none;color:var(--txt);box-shadow:var(--sh);transition:all .18s;display:flex;flex-direction:column;gap:6px}
+    .card:hover{border-color:rgba(232,98,26,.3);box-shadow:0 4px 18px rgba(0,0,0,.09);transform:translateY(-1px)}
+    .card-tag{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--acc)}
+    .card-title{font-family:'Lora',serif;font-weight:600;font-size:.88rem;line-height:1.3}
+    .card-desc{font-size:.75rem;color:var(--muted);line-height:1.5;flex:1}
+    .card-read{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--faint);margin-top:6px;padding-top:8px;border-top:1px solid var(--bord)}
 
     /* POST LIST */
-    .post-list{display:flex;flex-direction:column;gap:1px}
-    .post-item{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;padding:18px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);transition:all .2s}
-    .post-item:first-child{padding-top:0}
-    .post-item:last-child{border-bottom:none}
-    .post-item:hover .post-item-title{color:var(--acc)}
-    .post-item:hover .pi-arrow{opacity:1;transform:translateX(0)}
-    .post-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--faint);padding-top:3px;min-width:20px}
-    .post-item-cat{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);margin-bottom:4px;display:block}
-    .post-item-title{font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;line-height:1.35;margin-bottom:4px;transition:color .2s}
-    .post-item-excerpt{font-size:.78rem;color:var(--muted);line-height:1.55}
-    .pi-arrow{font-size:.8rem;color:var(--acc);opacity:0;transform:translateX(-6px);transition:all .2s;padding-top:3px}
+    .post-list{border-top:1px solid var(--bord)}
+    .post-row{display:grid;grid-template-columns:28px 1fr 16px;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);transition:all .15s}
+    .post-row:last-child{border-bottom:none}
+    .post-row:hover .pr-title{color:var(--acc)}
+    .post-row:hover .pr-arr{opacity:1;transform:translateX(0)}
+    .pr-n{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--faint);padding-top:4px}
+    .pr-cat{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--faint);margin-bottom:3px}
+    .pr-title{font-family:'Lora',serif;font-weight:500;font-size:.9rem;line-height:1.35;margin-bottom:3px;transition:color .15s}
+    .pr-excerpt{font-size:.76rem;color:var(--muted);line-height:1.5}
+    .pr-arr{font-size:.75rem;color:var(--acc);opacity:0;transform:translateX(-4px);transition:all .15s;padding-top:4px}
+
+    /* MORE LINK */
+    .more-link{display:inline-block;margin-top:14px;font-size:.78rem;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--bord);padding-bottom:1px;transition:all .15s}
+    .more-link:hover{color:var(--acc);border-color:var(--acc)}
 
     /* SIDEBAR */
-    .side-section{margin-bottom:32px}
-    .side-title{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-    .side-title::after{content:'';flex:1;height:1px;background:var(--bord)}
-    .tag-cloud{display:flex;flex-wrap:wrap;gap:7px}
-    .tag-pill{font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:4px 10px;border-radius:100px;border:1px solid var(--bord);color:var(--muted);text-decoration:none;transition:all .2s;background:var(--card)}
-    .tag-pill:hover{border-color:var(--acc);color:var(--acc)}
-    .tag-pill.big{font-size:.72rem;padding:5px 13px}
-    .archive-list{list-style:none}
-    .archive-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--bord);font-size:.82rem}
-    .archive-item:last-child{border-bottom:none}
-    .archive-item a{color:var(--muted);text-decoration:none;transition:color .2s}
-    .archive-item a:hover{color:var(--acc)}
-    .archive-count{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--faint);background:var(--card);border:1px solid var(--bord);padding:2px 7px;border-radius:100px}
+    .sidebar{}
+    .sb-section{margin-bottom:28px}
+    .sb-title{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--acc);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .sb-title::after{content:'';flex:1;height:1px;background:var(--bord)}
 
-    /* NEWSLETTER */
-    .newsletter-mini{background:var(--card);border:1px solid var(--bord);border-radius:12px;padding:22px;position:relative;overflow:hidden}
-    .newsletter-mini::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--acc),var(--acc2),transparent)}
-    .newsletter-mini h3{font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;margin-bottom:8px}
-    .newsletter-mini p{font-size:.78rem;color:var(--muted);line-height:1.55;margin-bottom:14px}
-    .nl-row{display:flex;flex-direction:column;gap:8px}
-    .nl-row input{background:var(--bg3);border:1px solid var(--bord);border-radius:6px;padding:9px 12px;color:var(--txt);font-family:'Instrument Sans',sans-serif;font-size:.8rem;outline:none;transition:border .2s}
-    .nl-row input:focus{border-color:var(--acc)}
-    .nl-row input::placeholder{color:var(--faint)}
-    .nl-row button{background:var(--acc);color:var(--bg);border:none;padding:9px;border-radius:6px;font-weight:600;font-size:.82rem;cursor:pointer;transition:opacity .2s}
-    .nl-row button:hover{opacity:.9}
+    /* Newsletter */
+    .nl-box{background:var(--bg2);border:1px solid var(--bord);border-radius:10px;padding:18px}
+    .nl-box h3{font-family:'Lora',serif;font-weight:600;font-size:.9rem;margin-bottom:6px}
+    .nl-box p{font-size:.75rem;color:var(--muted);line-height:1.55;margin-bottom:12px}
+    .nl-box input{width:100%;background:#fff;border:1px solid var(--bord);border-radius:5px;padding:8px 11px;font-size:.8rem;color:var(--txt);outline:none;margin-bottom:8px;transition:border .15s}
+    .nl-box input:focus{border-color:var(--acc)}
+    .nl-box input::placeholder{color:var(--faint)}
+    .nl-box button{width:100%;background:var(--acc);color:#fff;border:none;padding:8px;border-radius:5px;font-size:.82rem;font-weight:500;cursor:pointer;transition:background .15s}
+    .nl-box button:hover{background:var(--acc2)}
 
-    /* PROJECTS */
-    .project-list{display:flex;flex-direction:column;gap:10px}
-    .proj-chip{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bord);border-radius:8px;padding:12px;text-decoration:none;color:var(--txt);transition:all .2s}
-    .proj-chip:hover{border-color:rgba(245,114,42,.3)}
-    .proj-chip-icon{width:32px;height:32px;border-radius:6px;background:var(--dim);border:1px solid rgba(245,114,42,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-    .proj-chip-name{font-size:.82rem;font-weight:600;margin-bottom:2px}
-    .proj-chip-sub{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted)}
-    .proj-chip-status{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:2px 7px;border-radius:100px;flex-shrink:0}
-    .st-live{background:rgba(0,220,100,.12);color:#00DC64;border:1px solid rgba(0,220,100,.25)}
-    .st-wip{background:rgba(255,180,0,.12);color:#FFB400;border:1px solid rgba(255,180,0,.25)}
+    /* Tags */
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:.68rem;font-family:'JetBrains Mono',monospace;padding:3px 9px;border-radius:100px;border:1px solid var(--bord);color:var(--muted);text-decoration:none;background:var(--bg2);transition:all .15s}
+    .tag:hover{border-color:var(--acc);color:var(--acc);background:var(--dim)}
+
+    /* Projects */
+    .proj-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bord);text-decoration:none;color:var(--txt);transition:color .15s}
+    .proj-item:last-child{border-bottom:none}
+    .proj-item:hover{color:var(--acc)}
+    .proj-icon{width:30px;height:30px;border-radius:6px;background:var(--dim);border:1px solid rgba(232,98,26,.2);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+    .proj-name{font-size:.8rem;font-weight:500;margin-bottom:1px}
+    .proj-tech{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--faint)}
+    .proj-status{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.58rem;padding:2px 6px;border-radius:4px;flex-shrink:0}
+    .s-live{background:#EDFBF3;color:#1A9C52;border:1px solid #B8EDD1}
+    .s-wip{background:#FFF8EA;color:#C47A00;border:1px solid #F5DFA0}
+
+    /* Archive */
+    .arch-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bord);font-size:.8rem}
+    .arch-row:last-child{border-bottom:none}
+    .arch-row a{color:var(--muted);text-decoration:none;transition:color .15s}
+    .arch-row a:hover{color:var(--acc)}
+    .arch-n{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--faint)}
 
     /* ABOUT */
-    .about-strip{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 clamp(20px,5%,80px) 80px}
-    .about-inner{background:var(--card);border:1px solid var(--bord);border-radius:14px;padding:36px 40px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
-    .about-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--bg);flex-shrink:0}
-    .about-text h2{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;margin-bottom:4px}
-    .about-text h2 small{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:.7rem;color:var(--muted);margin-left:10px}
-    .about-text p{font-size:.84rem;color:var(--muted);line-height:1.7;max-width:620px;margin-bottom:14px}
-    .about-pills{display:flex;gap:8px;flex-wrap:wrap}
-    .about-pill{font-family:'JetBrains Mono',monospace;font-size:.67rem;padding:3px 10px;border-radius:100px;border:1px solid rgba(245,114,42,.3);color:var(--acc2);text-decoration:none;transition:all .2s}
-    .about-pill:hover{background:var(--dim)}
+    .about-strip{border-top:1px solid var(--bord);padding:36px 0 48px}
+    .about-inner{background:var(--bg2);border:1px solid var(--bord);border-radius:12px;padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+    @media(max-width:600px){.about-inner{grid-template-columns:1fr;text-align:center}}
+    .about-av{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:600;font-size:1.2rem;color:#fff;flex-shrink:0}
+    .about-text h2{font-family:'Lora',serif;font-weight:600;font-size:1rem;margin-bottom:3px}
+    .about-text h2 small{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--faint);font-weight:400;margin-left:8px}
+    .about-text p{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:12px}
+    .about-links{display:flex;gap:8px;flex-wrap:wrap}
+    .about-link{font-size:.73rem;color:var(--acc);text-decoration:none;border:1px solid rgba(232,98,26,.25);padding:3px 10px;border-radius:100px;transition:all .15s}
+    .about-link:hover{background:var(--dim)}
 
     /* FOOTER */
-    footer{position:relative;z-index:1;border-top:1px solid var(--bord);padding:28px clamp(20px,5%,80px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    footer p{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted)}
-    footer p a{color:var(--acc);text-decoration:none}
-    .footer-nav{display:flex;gap:20px}
-    .footer-nav a{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);text-decoration:none;transition:color .2s}
-    .footer-nav a:hover{color:var(--acc)}
+    footer{border-top:1px solid var(--bord);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint)}
+    footer p a{color:var(--muted);text-decoration:none}
+    footer p a:hover{color:var(--acc)}
+    .foot-links{display:flex;gap:16px}
+    .foot-links a{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint);text-decoration:none;transition:color .15s}
+    .foot-links a:hover{color:var(--acc)}
 
-    /* Animations */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-    .f1{animation:fadeUp .6s .05s ease both}
-    .f2{animation:fadeUp .6s .15s ease both}
-    .f3{animation:fadeUp .6s .25s ease both}
-    .f4{animation:fadeUp .6s .35s ease both}
-
-    /* Responsive */
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .hero-side{display:none}
-      .main-wrap{grid-template-columns:1fr}
-      .side-col{display:none}
-      .featured-post{grid-template-columns:1fr}
-      .feat-visual{min-height:140px}
-      .about-inner{grid-template-columns:1fr}
-      .card-grid{grid-template-columns:1fr}
-    }
-    @media(max-width:600px){.nav-links{display:none}}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .f1{animation:fadeUp .5s .05s ease both}
+    .f2{animation:fadeUp .5s .12s ease both}
+    .f3{animation:fadeUp .5s .2s ease both}
   </style>
 </head>
 <body>
-<div class="glow" aria-hidden="true"></div>
 
 <!-- NAV -->
 <nav role="navigation" aria-label="Ana menü">
-  <a href="/" class="nav-brand"><span>emre</span>cihan</a>
+  <a href="index.html" class="nav-brand"><span>emre</span>cihan</a>
   <div class="nav-links">
-    <a href="/elektronik">Elektronik</a>
-    <a href="/it-sistem">IT & Sistem</a>
-    <a href="/yazilim">Yazılım</a>
-    <a href="/projeler">Projeler</a>
-    <a href="/dokumanlar" style="color:var(--acc2)">📁 Dokümanlar</a>
-    <a href="/hakkimda">Hakkımda</a>
+    <a href="index.html" class="active">Anasayfa</a>
+    <a href="elektronik.html">Elektronik</a>
+    <a href="it-sistem.html">IT & Sistem</a>
+    <a href="yazilim.html">Yazılım</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="dokumanlar.html" class="nav-docs">📁 Dokümanlar</a>
+    <a href="hakkimda.html">Hakkımda</a>
   </div>
+  <button class="nav-mobile" onclick="toggleMenu()" aria-label="Menü">☰</button>
 </nav>
 
-<!-- HERO -->
-<header class="hero" role="banner">
-  <div>
-    <div class="hero-eyebrow f1">Hasan Emre Cihan'ın blogu</div>
-    <h1 class="f2">Elektronik, IT ve yazılım üzerine<br><em>deneyimlerden doğan notlar</em></h1>
-    <p class="hero-bio f3">Merhaba, ben Emre. Mesleğim gereği IT tarafında çalışıyorum — sunucular, ERP'ler, Active Directory, o tür şeyler. Ama boş zamanlarım büyük çoğunlukla elektronikle geçiyor: devreler, PCB tasarımı, küçük IoT projeleri. Bu blog öğrendiklerimi ve çıkmaza girip çıktığım şeyleri not aldığım yer.</p>
-    <div class="hero-tags f3">
-      <span class="htag hot">PCB Tasarımı</span>
-      <span class="htag hot">ESP32 / Arduino</span>
-      <span class="htag hot">IoT</span>
-      <span class="htag">Gömülü Sistemler</span>
-      <span class="htag">IT Altyapısı</span>
-      <span class="htag">ERP</span>
-      <span class="htag">SQL</span>
-      <span class="htag">Node.js</span>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label f1">Hasan Emre Cihan'ın blogu</div>
+        <h1 class="f2">Elektronik, IT ve yazılım üzerine<br><em>deneyimlerden notlar</em></h1>
+        <p class="hero-bio f2">Merhaba, ben Emre. Gündüzleri IT tarafında çalışıyorum — sunucular, ERP'ler, Active Directory. Boş zamanlarım ise genellikle elektronikle geçiyor: devreler, PCB tasarımı, küçük IoT projeleri. Öğrendiklerimi ve çıkmaza girip çıktığım şeyleri burada yazıyorum.</p>
+        <div class="hero-tags f3">
+          <span class="htag hi">PCB Tasarımı</span>
+          <span class="htag hi">ESP32</span>
+          <span class="htag hi">IoT</span>
+          <span class="htag">Gömülü Sistemler</span>
+          <span class="htag">IT Altyapısı</span>
+          <span class="htag">ERP</span>
+          <span class="htag">SQL</span>
+          <span class="htag">Node.js</span>
+        </div>
+        <div class="hero-btns f3">
+          <a href="elektronik.html" class="btn-primary">Elektronik yazıları</a>
+          <a href="hakkimda.html" class="btn-ghost">Hakkımda</a>
+        </div>
+      </div>
+      <aside aria-label="Son yazılar">
+        <div class="aside-box">
+          <div class="aside-title">Son eklenenler</div>
+          <a href="#" class="aside-post"><span class="aside-post-cat">Elektronik · ESP32</span>ESP32 ile Ev Otomasyon Sistemi — MQTT ve Home Assistant</a>
+          <a href="#" class="aside-post"><span class="aside-post-cat">Elektronik · PCB</span>PCB'de Ground Plane Nasıl Yapılır, Neden Önemli?</a>
+          <a href="#" class="aside-post"><span class="aside-post-cat">IT · Active Directory</span>Active Directory Audit Log Kurulumu</a>
+          <a href="#" class="aside-post"><span class="aside-post-cat">Elektronik · Güç</span>TP4056 ile LiPo Şarj Devresi Tasarımı</a>
+          <a href="#" class="aside-post"><span class="aside-post-cat">Yazılım · SQL</span>Execution Plan Okumak ve Sorgu Hızlandırmak</a>
+        </div>
+        <div class="aside-box">
+          <div class="aside-title">İçerik özeti</div>
+          <div class="aside-stat"><span>Toplam yazı</span><strong>47</strong></div>
+          <div class="aside-stat"><span>Elektronik</span><strong>24</strong></div>
+          <div class="aside-stat"><span>IT & Sistem</span><strong>13</strong></div>
+          <div class="aside-stat"><span>Yazılım</span><strong>10</strong></div>
+        </div>
+      </aside>
     </div>
-    <div class="hero-links f4">
-      <a href="/elektronik" class="btn-solid">Elektronik yazıları</a>
-      <a href="/hakkimda" class="btn-line">Hakkımda</a>
-    </div>
+  </header>
+
+  <!-- MAIN -->
+  <div class="main-grid">
+    <main role="main">
+
+      <!-- ÖNE ÇIKAN -->
+      <div class="cat-block">
+        <div class="sec-label">Öne çıkan</div>
+        <div class="sec-head"><h2>Bu Hafta</h2></div>
+        <a href="#" class="featured">
+          <div class="feat-thumb">☀️</div>
+          <div class="feat-body">
+            <span class="feat-badge">Proje Günlüğü</span>
+            <h3>Solar Hareket Sensörlü Lamba — Baştan Sona Tasarım Süreci</h3>
+            <p>Hem PCB tasarımını hem gömülü yazılımını sıfırdan yaptığım bir proje. PIR sensör seçiminden güç yönetimine kadar öğrendiklerimi yazdım.</p>
+            <div class="feat-meta">Elektronik · PCB · Gömülü · 14 dk okuma</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- ELEKTRONİK -->
+      <div class="cat-block">
+        <div class="sec-label">Elektronik & PCB</div>
+        <div class="sec-head"><h2>Son yazılar</h2><a href="elektronik.html">Tümünü gör →</a></div>
+        <div class="card-grid">
+          <a href="#" class="card"><span class="card-tag">ESP32 · MQTT</span><div class="card-title">ESP32 ile Ev Otomasyon Sistemi Kurmak</div><div class="card-desc">Home Assistant entegrasyonu, MQTT broker ve röle kontrolü.</div><div class="card-read">10 dk · Orta</div></a>
+          <a href="#" class="card"><span class="card-tag">PCB · KiCad</span><div class="card-title">PCB'de Ground Plane Neden Bu Kadar Önemli?</div><div class="card-desc">EMI problemleri ve güç gürültüsünü test ettiğim devrelerle anlattım.</div><div class="card-read">7 dk · Başlangıç</div></a>
+          <a href="#" class="card"><span class="card-tag">TP4056 · LiPo</span><div class="card-title">TP4056 ile LiPo Şarj Devresi Tasarımı</div><div class="card-desc">Datasheet okuma, DW01A koruma entegrasyonu ve layout ipuçları.</div><div class="card-read">8 dk · Orta</div></a>
+          <a href="#" class="card"><span class="card-tag">Arduino · I2C</span><div class="card-title">Arduino I2C Haberleşmesinde Sık Yapılan Hatalar</div><div class="card-desc">Pull-up dirençlerinden clock stretching'e debug notları.</div><div class="card-read">6 dk · Başlangıç</div></a>
+        </div>
+        <div class="post-list">
+          <a href="#" class="post-row"><span class="pr-n">05</span><div><div class="pr-cat">Elektronik · Araç</div><div class="pr-title">EasyEDA'dan KiCad'a Geçiş — Neden Geçtim?</div><div class="pr-excerpt">İkisini de ciddi projelerde kullandım, farklar ve tavsiyeler.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">06</span><div><div class="pr-cat">Elektronik · Üretim</div><div class="pr-title">JLCPCB'den PCB ve SMD Montaj Siparişi Vermek</div><div class="pr-excerpt">Gerber'dan BOM'a, LCSC component seçimine kadar adım adım.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">07</span><div><div class="pr-cat">Elektronik · RF</div><div class="pr-title">433 MHz RF Modül ile Kablosuz Veri Gönderme</div><div class="pr-excerpt">RC-Switch kütüphanesi, mesafe ve gürültü problemleri.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">08</span><div><div class="pr-cat">Elektronik · Güç</div><div class="pr-title">Buck Converter Tasarımı — MP2307 ile 5V Regülatör PCB</div><div class="pr-excerpt">İndüktör seçimi, kondansatör hesabı ve termal yönetim.</div></div><span class="pr-arr">→</span></a>
+        </div>
+        <a href="elektronik.html" class="more-link">Tüm elektronik yazıları →</a>
+      </div>
+
+      <!-- IT -->
+      <div class="cat-block">
+        <div class="sec-label">IT & Sistem Yönetimi</div>
+        <div class="sec-head"><h2>Son yazılar</h2><a href="it-sistem.html">Tümünü gör →</a></div>
+        <div class="post-list">
+          <a href="#" class="post-row"><span class="pr-n">01</span><div><div class="pr-cat">IT · Active Directory</div><div class="pr-title">Active Directory Audit Log Kurulumu ve Olay Analizi</div><div class="pr-excerpt">Hangi Event ID'lere bakmalısın, PowerShell ile log sorguları.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">02</span><div><div class="pr-cat">IT · Outlook</div><div class="pr-title">Outlook Arama Neden Çalışmıyor? Kalıcı Çözüm</div><div class="pr-excerpt">OST bozulması, Windows Search servisi ve index rebuild adımları.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">03</span><div><div class="pr-cat">IT · Sunucu</div><div class="pr-title">Küçük İşletmeler İçin Doğru Sunucu Mimarisi</div><div class="pr-excerpt">Fiziksel, VM ya da cloud — her seçeneğin yönetim yükü.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">04</span><div><div class="pr-cat">IT · Windows</div><div class="pr-title">Windows Event Log — Bilmen Gereken Kritik Event ID'ler</div><div class="pr-excerpt">4624, 4625, 4648, 4720 ve ne anlama geldikleri.</div></div><span class="pr-arr">→</span></a>
+        </div>
+        <a href="it-sistem.html" class="more-link">Tüm IT yazıları →</a>
+      </div>
+
+      <!-- YAZILIM -->
+      <div class="cat-block">
+        <div class="sec-label">Yazılım & ERP</div>
+        <div class="sec-head"><h2>Son yazılar</h2><a href="yazilim.html">Tümünü gör →</a></div>
+        <div class="post-list">
+          <a href="#" class="post-row"><span class="pr-n">01</span><div><div class="pr-cat">Yazılım · SQL</div><div class="pr-title">SQL Execution Plan Okumak — Gerçek Örneklerle</div><div class="pr-excerpt">Index scan vs seek, hash join, sorgu maliyetini düşürme.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">02</span><div><div class="pr-cat">Yazılım · ERP</div><div class="pr-title">ERP Sistemlerinde Performans Düşüşünün Gerçek Sebepleri</div><div class="pr-excerpt">Yanlış index, büyüyen log dosyaları, n+1 sorgu problemi.</div></div><span class="pr-arr">→</span></a>
+          <a href="#" class="post-row"><span class="pr-n">03</span><div><div class="pr-cat">Yazılım · Node.js</div><div class="pr-title">B2B Projeler için Node.js REST API Mimarisi</div><div class="pr-excerpt">Katmanlı yapı, middleware organizasyonu ve hata yönetimi.</div></div><span class="pr-arr">→</span></a>
+        </div>
+        <a href="yazilim.html" class="more-link">Tüm yazılım yazıları →</a>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Yan panel">
+      <div class="sb-section">
+        <div class="nl-box">
+          <h3>Yeni yazıları e-posta ile al</h3>
+          <p>Yeni bir şey yayınladığımda haber vereyim. Başka bir şey yok.</p>
+          <form onsubmit="handleSub(event)">
+            <input type="email" placeholder="e-posta@adresin.com" required autocomplete="email"/>
+            <button type="submit" id="nl-btn">Abone ol</button>
+          </form>
+        </div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-title">Projeler</div>
+        <a href="projeler.html" class="proj-item"><div class="proj-icon">☀️</div><div><div class="proj-name">Solar Motion Lamp</div><div class="proj-tech">PCB · Gömülü C · PIR</div></div><span class="proj-status s-live">Ürün</span></a>
+        <a href="projeler.html" class="proj-item"><div class="proj-icon">🌐</div><div><div class="proj-name">DomainMonitorX</div><div class="proj-tech">Node.js · WHOIS</div></div><span class="proj-status s-live">Aktif</span></a>
+        <a href="projeler.html" class="proj-item"><div class="proj-icon">📄</div><div><div class="proj-name">SmartDocClassifier</div><div class="proj-tech">Python · OCR · ML</div></div><span class="proj-status s-wip">Geliştirmede</span></a>
+        <a href="projeler.html" class="proj-item"><div class="proj-icon">⚡</div><div><div class="proj-name">Tesla Stok Botu</div><div class="proj-tech">Python · Telegram</div></div><span class="proj-status s-live">Aktif</span></a>
+      </div>
+      <div class="sb-section">
+        <div class="sb-title">Konular</div>
+        <div class="tag-cloud">
+          <a href="elektronik.html" class="tag">PCB Tasarımı</a>
+          <a href="elektronik.html" class="tag">ESP32</a>
+          <a href="elektronik.html" class="tag">IoT</a>
+          <a href="elektronik.html" class="tag">Arduino</a>
+          <a href="elektronik.html" class="tag">KiCad</a>
+          <a href="elektronik.html" class="tag">Gömülü</a>
+          <a href="elektronik.html" class="tag">MQTT</a>
+          <a href="it-sistem.html" class="tag">Active Directory</a>
+          <a href="yazilim.html" class="tag">SQL</a>
+          <a href="yazilim.html" class="tag">ERP</a>
+          <a href="yazilim.html" class="tag">Node.js</a>
+          <a href="elektronik.html" class="tag">JLCPCB</a>
+          <a href="elektronik.html" class="tag">RF · 433MHz</a>
+        </div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-title">Arşiv</div>
+        <div class="arch-row"><a href="#">2025</a><span class="arch-n">18 yazı</span></div>
+        <div class="arch-row"><a href="#">2024</a><span class="arch-n">21 yazı</span></div>
+        <div class="arch-row"><a href="#">2023</a><span class="arch-n">8 yazı</span></div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-title">Takip et</div>
+        <a href="/rss.xml" class="btn-ghost" style="display:block;text-align:center;margin-bottom:6px;font-size:.78rem;padding:7px">📡 RSS Feed</a>
+        <a href="https://linkedin.com/in/hasanemrecihan" rel="noopener" class="btn-ghost" style="display:block;text-align:center;margin-bottom:6px;font-size:.78rem;padding:7px">LinkedIn</a>
+        <a href="https://github.com/hasanemrecihan" rel="noopener" class="btn-ghost" style="display:block;text-align:center;font-size:.78rem;padding:7px">GitHub</a>
+      </div>
+    </aside>
   </div>
 
-  <aside class="hero-side" aria-label="Son yazılar">
-    <div class="side-card">
-      <div class="side-card-title">// son eklenenler</div>
-      <a href="/elektronik/esp32-ev-otomasyon" class="side-post"><span class="side-post-cat">Elektronik · ESP32</span>ESP32 ile Ev Otomasyon Sistemi — MQTT ve Home Assistant</a>
-      <a href="/elektronik/pcb-ground-plane" class="side-post"><span class="side-post-cat">Elektronik · PCB</span>PCB'de Ground Plane Nasıl Yapılır, Neden Önemli?</a>
-      <a href="/it/active-directory-audit" class="side-post"><span class="side-post-cat">IT · Active Directory</span>Active Directory Audit Log Kurulumu ve Analizi</a>
-      <a href="/elektronik/lipo-sarj" class="side-post"><span class="side-post-cat">Elektronik · Güç</span>TP4056 ile LiPo Şarj Devresi — Tasarım Notları</a>
-      <a href="/yazilim/sql-execution-plan" class="side-post"><span class="side-post-cat">Yazılım · SQL</span>Execution Plan Okumak ve Sorgu Hızlandırmak</a>
-    </div>
-    <div class="side-card">
-      <div class="side-card-title">// içerik özeti</div>
-      <div class="side-stat-row"><span>Toplam yazı</span><span>47</span></div>
-      <div class="side-stat-row"><span>Elektronik</span><span>24</span></div>
-      <div class="side-stat-row"><span>IT & Sistem</span><span>13</span></div>
-      <div class="side-stat-row"><span>Yazılım</span><span>10</span></div>
-    </div>
-  </aside>
-</header>
-
-<!-- MAIN -->
-<main class="main-wrap" role="main">
-  <div class="main-col">
-
-    <!-- FEATURED -->
-    <div class="sec-head"><h2>Öne Çıkan Yazı</h2></div>
-    <a href="/elektronik/solar-sensörlu-lamba" class="featured-post">
-      <div class="feat-visual" aria-hidden="true">
-        <div class="circuit"></div>
-        <div class="big-icon">☀️</div>
-      </div>
-      <div class="feat-body">
-        <span class="feat-label">Proje Günlüğü</span>
-        <h3>Solar Hareket Sensörlü Lamba — Baştan Sona Tasarım Süreci</h3>
-        <p>Hem PCB tasarımını hem gömülü yazılımını sıfırdan yaptığım bir proje. PIR sensör seçiminden güç yönetimine, devre testinden seri üretime kadar öğrendiklerimi yazdım.</p>
-        <div class="feat-meta"><span>Elektronik · PCB · Gömülü</span><span>·</span><span>14 dk okuma</span></div>
-      </div>
-    </a>
-
-    <!-- ELEKTRONİK -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <div class="cat-icon-wrap" aria-hidden="true">🔌</div>
-        <div class="cat-header-text"><h3>Elektronik & PCB</h3><span>24 yazı · En çok okunan kategori</span></div>
-      </div>
-      <div class="card-grid">
-        <a href="/elektronik/esp32-ev-otomasyon" class="mini-card">
-          <span class="mini-card-tag">ESP32 · MQTT · WiFi</span>
-          <div class="mini-card-title">ESP32 ile Ev Otomasyon Sistemi Kurmak</div>
-          <div class="mini-card-desc">Home Assistant entegrasyonu, MQTT broker kurulumu ve röle kontrolü. Üç haftalık sürecin notları.</div>
-          <div class="mini-card-read">10 dk · Orta seviye</div>
-        </a>
-        <a href="/elektronik/pcb-ground-plane" class="mini-card">
-          <span class="mini-card-tag">PCB · KiCad · EMI</span>
-          <div class="mini-card-title">PCB'de Ground Plane Neden Bu Kadar Önemli?</div>
-          <div class="mini-card-desc">EMI problemlerinden güç gürültüsüne kadar ground plane'in neden olmazsa olmaz olduğunu test ettiğim devrelerle anlattım.</div>
-          <div class="mini-card-read">7 dk · Başlangıç</div>
-        </a>
-        <a href="/elektronik/lipo-sarj" class="mini-card">
-          <span class="mini-card-tag">TP4056 · LiPo · Güç</span>
-          <div class="mini-card-title">TP4056 ile LiPo Şarj Devresi Tasarımı</div>
-          <div class="mini-card-desc">TP4056'nın datasheet'ini baştan okudum, DW01A koruma entegrasyonu ve PCB layout ipuçları.</div>
-          <div class="mini-card-read">8 dk · Orta seviye</div>
-        </a>
-        <a href="/elektronik/arduino-i2c-hata" class="mini-card">
-          <span class="mini-card-tag">Arduino · I2C · Debug</span>
-          <div class="mini-card-title">Arduino I2C Haberleşmesinde Sık Yapılan Hatalar</div>
-          <div class="mini-card-desc">Pull-up dirençlerinden clock stretching'e, saatlerce debug ettiğim sorunların listesi ve çözümleri.</div>
-          <div class="mini-card-read">6 dk · Başlangıç</div>
-        </a>
-        <a href="/elektronik/easyeda-kicad" class="mini-card">
-          <span class="mini-card-tag">EasyEDA · KiCad · Araç</span>
-          <div class="mini-card-title">EasyEDA'dan KiCad'a Geçiş — Neden Geçtim?</div>
-          <div class="mini-card-desc">İkisini de ciddi projelerde kullandım. Farklar, artılar, eksiler ve hangisi için ne kullanmalısın.</div>
-          <div class="mini-card-read">5 dk · Başlangıç</div>
-        </a>
-        <a href="/elektronik/jlcpcb-siparis" class="mini-card">
-          <span class="mini-card-tag">JLCPCB · Üretim · SMD</span>
-          <div class="mini-card-title">JLCPCB'den PCB ve SMD Montaj Siparişi Vermek</div>
-          <div class="mini-card-desc">Gerber dosyalarından BOM hazırlamaya, LCSC component seçimine kadar adım adım sipariş süreci.</div>
-          <div class="mini-card-read">9 dk · Başlangıç</div>
-        </a>
-      </div>
-      <div class="post-list">
-        <a href="/elektronik/433mhz-rf" class="post-item"><span class="post-num">07</span><div><span class="post-item-cat">Elektronik · RF</span><div class="post-item-title">433 MHz RF Modül ile Kablosuz Veri Gönderme</div><div class="post-item-excerpt">RC-Switch kütüphanesi, sinyal mesafesi ve gürültü problemleri.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/oled-display" class="post-item"><span class="post-num">08</span><div><span class="post-item-cat">Elektronik · Ekran</span><div class="post-item-title">0.96" OLED Ekranı ESP32 ile Kullanmak — SSD1306</div><div class="post-item-excerpt">Adafruit kütüphanesi, font boyutları ve bellek optimizasyonu.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/buck-converter" class="post-item"><span class="post-num">09</span><div><span class="post-item-cat">Elektronik · Güç</span><div class="post-item-title">Buck Converter Tasarımı — MP2307 ile 5V Regülatör PCB</div><div class="post-item-excerpt">İndüktör seçimi, kondansatör hesabı ve termal yönetim.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/pcb-hata-listesi" class="post-item"><span class="post-num">10</span><div><span class="post-item-cat">Elektronik · PCB</span><div class="post-item-title">PCB Tasarlarken Yaptığım 12 Hata — Üretimde Fark Ettim</div><div class="post-item-excerpt">Pad genişliklerinden via boyutlarına, pahalı dersler.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/iot-mqtt" class="post-item"><span class="post-num">11</span><div><span class="post-item-cat">Elektronik · IoT</span><div class="post-item-title">MQTT Nedir, Neden IoT Projelerinde Kullanmalısın?</div><div class="post-item-excerpt">Pub/sub modeli, broker kurulumu ve QoS seviyeleri.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/wemos-d1" class="post-item"><span class="post-num">12</span><div><span class="post-item-cat">Elektronik · WiFi</span><div class="post-item-title">Wemos D1 Mini ile Hızlı Prototip — Sıfırdan HTTP Sunucu</div><div class="post-item-excerpt">ESP8266 tabanlı bu küçük kartla on dakikada web sunucu.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/nrf24l01" class="post-item"><span class="post-num">13</span><div><span class="post-item-cat">Elektronik · RF</span><div class="post-item-title">nRF24L01 ile İki Arduino Arasında İki Yönlü Haberleşme</div><div class="post-item-excerpt">SPI bağlantısı, PA+LNA versiyonunun farkları ve mesafe testleri.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/atmega328-standalone" class="post-item"><span class="post-num">14</span><div><span class="post-item-cat">Elektronik · AVR</span><div class="post-item-title">ATmega328P'yi Breadboard'da Standalone Çalıştırmak</div><div class="post-item-excerpt">Arduino bootloader, 16 MHz kristal ve minimal devre şeması.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/elektronik/pir-sensoru" class="post-item"><span class="post-num">15</span><div><span class="post-item-cat">Elektronik · Sensör</span><div class="post-item-title">PIR Sensörü Nasıl Çalışır? HC-SR501 Detaylı İnceleme</div><div class="post-item-excerpt">Sensitivity ve time delay potansiyometre ayarları, false trigger problemleri.</div></div><span class="pi-arrow">→</span></a>
-      </div>
-      <div style="margin-top:16px"><a href="/elektronik" class="btn-line" style="font-size:.8rem;padding:8px 18px">Tüm elektronik yazıları →</a></div>
-    </div>
-
-    <!-- IT -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <div class="cat-icon-wrap" aria-hidden="true">🖥</div>
-        <div class="cat-header-text"><h3>IT & Sistem Yönetimi</h3><span>13 yazı · Sunucu, AD, altyapı</span></div>
-      </div>
-      <div class="post-list">
-        <a href="/it/active-directory-audit" class="post-item"><span class="post-num">01</span><div><span class="post-item-cat">IT · Active Directory</span><div class="post-item-title">Active Directory Audit Log Kurulumu ve Olay Analizi</div><div class="post-item-excerpt">Hangi Event ID'lere bakmalısın, PowerShell ile log sorguları ve uyarı sistemi.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/it/outlook-search-fix" class="post-item"><span class="post-num">02</span><div><span class="post-item-cat">IT · Outlook</span><div class="post-item-title">Outlook Arama Neden Çalışmıyor? Kalıcı Çözüm</div><div class="post-item-excerpt">OST bozulması, Windows Search servisi ve index rebuild adımları.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/it/sunucu-mimarisi" class="post-item"><span class="post-num">03</span><div><span class="post-item-cat">IT · Sunucu</span><div class="post-item-title">Küçük İşletmeler İçin Doğru Sunucu Mimarisi</div><div class="post-item-excerpt">Fiziksel mi, VM mi, cloud mı? Her seçeneğin maliyeti ve yönetim yükü.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/it/event-log-analiz" class="post-item"><span class="post-num">04</span><div><span class="post-item-cat">IT · Windows</span><div class="post-item-title">Windows Event Log — Bilmen Gereken Kritik Event ID'ler</div><div class="post-item-excerpt">4624, 4625, 4648, 4720… ve ne anlama geldikleri.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/it/dns-sorunlari" class="post-item"><span class="post-num">05</span><div><span class="post-item-cat">IT · DNS</span><div class="post-item-title">Kurumsal Ağda DNS Sorunlarını Adım Adım Debug Etmek</div><div class="post-item-excerpt">nslookup ve dig ile tanı, split-brain DNS ve zone transfer sorunları.</div></div><span class="pi-arrow">→</span></a>
-      </div>
-      <div style="margin-top:16px"><a href="/it-sistem" class="btn-line" style="font-size:.8rem;padding:8px 18px">Tüm IT yazıları →</a></div>
-    </div>
-
-    <!-- YAZILIM -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <div class="cat-icon-wrap" aria-hidden="true">⚙️</div>
-        <div class="cat-header-text"><h3>Yazılım & ERP</h3><span>10 yazı · Backend, SQL, API</span></div>
-      </div>
-      <div class="post-list">
-        <a href="/yazilim/sql-execution-plan" class="post-item"><span class="post-num">01</span><div><span class="post-item-cat">Yazılım · SQL</span><div class="post-item-title">SQL Execution Plan Okumak — Gerçek Örneklerle</div><div class="post-item-excerpt">Index scan vs seek, nested loop'tan hash join'a, sorgu maliyetini düşürme.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/yazilim/erp-performans" class="post-item"><span class="post-num">02</span><div><span class="post-item-cat">Yazılım · ERP</span><div class="post-item-title">ERP Sistemlerinde Performans Düşüşünün Gerçek Sebepleri</div><div class="post-item-excerpt">Yanlış index, büyüyen log dosyaları ve n+1 sorgu problemi.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/yazilim/nodejs-api-mimari" class="post-item"><span class="post-num">03</span><div><span class="post-item-cat">Yazılım · Node.js</span><div class="post-item-title">B2B Projeler için Node.js REST API Mimarisi</div><div class="post-item-excerpt">Katmanlı yapı, middleware organizasyonu ve hata yönetimi.</div></div><span class="pi-arrow">→</span></a>
-        <a href="/yazilim/domain-monitor" class="post-item"><span class="post-num">04</span><div><span class="post-item-cat">Yazılım · Proje</span><div class="post-item-title">DomainMonitorX — Domain Süre Takip Aracı Nasıl Yaptım?</div><div class="post-item-excerpt">WHOIS entegrasyonu, cron job'lar ve bildirim sistemi.</div></div><span class="pi-arrow">→</span></a>
-      </div>
-      <div style="margin-top:16px"><a href="/yazilim" class="btn-line" style="font-size:.8rem;padding:8px 18px">Tüm yazılım yazıları →</a></div>
-    </div>
-
-  </div>
-
-  <!-- SIDEBAR -->
-  <aside class="side-col" aria-label="Yan panel">
-    <div class="side-section">
-      <div class="newsletter-mini">
-        <h3>Yeni yazıları e-posta ile al</h3>
-        <p>Haftada bir ya da iki, yeni bir şey paylaştığımda haber vereyim. Başka bir şey yok.</p>
-        <form class="nl-row" onsubmit="handleSub(event)">
-          <label for="nl-email" class="sr-only">E-posta adresiniz</label>
-          <input type="email" id="nl-email" placeholder="e-posta@adresin.com" required autocomplete="email"/>
-          <button type="submit" id="nl-btn">Abone ol</button>
-        </form>
+  <!-- ABOUT -->
+  <section class="about-strip" aria-labelledby="about-h">
+    <div class="about-inner">
+      <div class="about-av">HE</div>
+      <div class="about-text">
+        <h2 id="about-h">Hasan Emre Cihan <small>emrecihan.com.tr</small></h2>
+        <p>Sistem yöneticisiyim ama esas olarak elektronikle ilgileniyorum. Küçüklükten beri devrelerle uğraşmaktan keyif alıyorum. Şimdi bu iki dünyayı bir arada götürmeye çalışıyorum. Buradaki yazılar ne tam akademik ne de çok basit — ikisi arasında bir yerde.</p>
+        <div class="about-links">
+          <a href="hakkimda.html" class="about-link">Hakkımda</a>
+          <a href="dokumanlar.html" class="about-link">Dokümanlar</a>
+          <a href="projeler.html" class="about-link">Projeler</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="side-section">
-      <div class="side-title">Projelerim</div>
-      <div class="project-list">
-        <a href="/projeler/solar-lamba" class="proj-chip"><div class="proj-chip-icon">☀️</div><div><div class="proj-chip-name">Solar Motion Lamp</div><div class="proj-chip-sub">PCB · Gömülü C · PIR</div></div><span class="proj-chip-status st-live">Ürün</span></a>
-        <a href="/projeler/domainmonitorx" class="proj-chip"><div class="proj-chip-icon">🌐</div><div><div class="proj-chip-name">DomainMonitorX</div><div class="proj-chip-sub">Node.js · WHOIS · Cron</div></div><span class="proj-chip-status st-live">Aktif</span></a>
-        <a href="/projeler/smartdocclassifier" class="proj-chip"><div class="proj-chip-icon">📄</div><div><div class="proj-chip-name">SmartDocClassifier</div><div class="proj-chip-sub">Python · OCR · ML</div></div><span class="proj-chip-status st-wip">Geliştirmede</span></a>
-        <a href="/projeler/tesla-bot" class="proj-chip"><div class="proj-chip-icon">⚡</div><div><div class="proj-chip-name">Tesla Stok Botu</div><div class="proj-chip-sub">Python · Telegram · Scraping</div></div><span class="proj-chip-status st-live">Aktif</span></a>
-      </div>
-    </div>
+  <footer role="contentinfo">
+    <p>© 2025 <a href="index.html">Hasan Emre Cihan</a> — emrecihan.com.tr</p>
+    <nav class="foot-links">
+      <a href="/rss.xml">RSS</a>
+      <a href="/sitemap.xml">Sitemap</a>
+      <a href="dokumanlar.html">Dokümanlar</a>
+      <a href="hakkimda.html">Hakkımda</a>
+    </nav>
+  </footer>
 
-    <div class="side-section">
-      <div class="side-title">Konular</div>
-      <div class="tag-cloud">
-        <a href="/etiket/pcb" class="tag-pill big">PCB Tasarımı</a>
-        <a href="/etiket/esp32" class="tag-pill big">ESP32</a>
-        <a href="/etiket/iot" class="tag-pill big">IoT</a>
-        <a href="/etiket/arduino" class="tag-pill">Arduino</a>
-        <a href="/etiket/kicad" class="tag-pill">KiCad</a>
-        <a href="/etiket/gomulu" class="tag-pill">Gömülü Sistemler</a>
-        <a href="/etiket/mqtt" class="tag-pill">MQTT</a>
-        <a href="/etiket/lipo" class="tag-pill">LiPo / Güç</a>
-        <a href="/etiket/active-directory" class="tag-pill">Active Directory</a>
-        <a href="/etiket/sql" class="tag-pill">SQL</a>
-        <a href="/etiket/erp" class="tag-pill">ERP</a>
-        <a href="/etiket/nodejs" class="tag-pill">Node.js</a>
-        <a href="/etiket/windows" class="tag-pill">Windows Server</a>
-        <a href="/etiket/jlcpcb" class="tag-pill">JLCPCB</a>
-        <a href="/etiket/rf" class="tag-pill">RF · 433MHz</a>
-        <a href="/etiket/avr" class="tag-pill">AVR · ATmega</a>
-      </div>
-    </div>
-
-    <div class="side-section">
-      <div class="side-title">Arşiv</div>
-      <ul class="archive-list">
-        <li class="archive-item"><a href="/arsiv/2025">2025</a><span class="archive-count">18</span></li>
-        <li class="archive-item"><a href="/arsiv/2024">2024</a><span class="archive-count">21</span></li>
-        <li class="archive-item"><a href="/arsiv/2023">2023</a><span class="archive-count">8</span></li>
-      </ul>
-    </div>
-
-    <div class="side-section">
-      <div class="side-title">Takip et</div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <a href="/rss.xml" class="btn-line" style="font-size:.75rem;padding:7px 14px;display:flex;align-items:center;gap:7px">📡 RSS Feed</a>
-        <a href="https://linkedin.com/in/hasanemrecihan" rel="noopener noreferrer" class="btn-line" style="font-size:.75rem;padding:7px 14px;display:flex;align-items:center;gap:7px">🔗 LinkedIn</a>
-        <a href="https://github.com/hasanemrecihan" rel="noopener noreferrer" class="btn-line" style="font-size:.75rem;padding:7px 14px;display:flex;align-items:center;gap:7px">💻 GitHub</a>
-      </div>
-    </div>
-  </aside>
-</main>
-
-<!-- ABOUT -->
-<section class="about-strip" aria-labelledby="about-h">
-  <div class="about-inner">
-    <div class="about-avatar" aria-hidden="true">HE</div>
-    <div class="about-text">
-      <h2 id="about-h">Hasan Emre Cihan <small>/ emrecihan.com.tr</small></h2>
-      <p>Sistem yöneticisiyim, ama esas olarak elektronikle ilgileniyorum. Küçüklükten beri devrelerle, bozuk cihazlarla uğraşmaktan keyif alıyorum. Şimdi bu iki dünyayı — IT altyapısı ve donanım geliştirme — bir arada götürmeye çalışıyorum. Buradaki yazılar ne tam akademik ne de çok basit; ikisi arasında bir yerde.</p>
-      <div class="about-pills">
-        <a href="/hakkimda" class="about-pill">Hakkımda</a>
-        <a href="/iletisim" class="about-pill">İletişim</a>
-        <a href="/projeler" class="about-pill">Tüm projeler</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <p>© 2025 <a href="/">Hasan Emre Cihan</a> — emrecihan.com.tr</p>
-  <nav class="footer-nav" aria-label="Footer">
-    <a href="/rss.xml">RSS</a>
-    <a href="/sitemap.xml">Sitemap</a>
-    <a href="/gizlilik">Gizlilik</a>
-    <a href="/iletisim">İletişim</a>
-  </nav>
-</footer>
+</div><!-- /wrap -->
 
 <script>
-  function handleSub(e) {
-    e.preventDefault();
-    const btn = document.getElementById('nl-btn');
-    btn.textContent = '✓ Tamam!';
-    btn.style.background = '#FFB347';
-    setTimeout(() => { btn.textContent = 'Abone ol'; btn.style.background = ''; e.target.reset(); }, 3000);
-  }
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; io.unobserve(e.target); }
-    });
-  }, { threshold: 0.07 });
-  document.querySelectorAll('.mini-card,.post-item,.proj-chip,.featured-post').forEach(el => {
-    el.style.opacity='0'; el.style.transform='translateY(14px)';
-    el.style.transition='opacity .45s ease,transform .45s ease,border-color .2s';
-    io.observe(el);
-  });
+  function handleSub(e){e.preventDefault();const b=document.getElementById('nl-btn');b.textContent='✓ Tamam!';b.style.background='var(--acc2)';setTimeout(()=>{b.textContent='Abone ol';b.style.background='';e.target.reset()},3000)}
+  function toggleMenu(){const nl=document.querySelector('.nav-links');nl.style.display=nl.style.display==='flex'?'none':'flex'}
+  const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';io.unobserve(x.target)}})},{threshold:.08});
+  document.querySelectorAll('.card,.post-row,.proj-item,.featured').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(10px)';el.style.transition='opacity .4s ease,transform .4s ease,border-color .15s,box-shadow .15s';io.observe(el)});
 </script>
 </body>
 </html>

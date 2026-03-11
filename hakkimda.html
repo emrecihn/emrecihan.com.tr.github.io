@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hakkımda – Hasan Emre Cihan</title>
+  <meta name="description" content="Hasan Emre Cihan hakkında. Sistem yöneticisi ve elektronik meraklısı. PCB tasarımı, IoT, IT altyapısı ve ERP çözümleri."/>
+  <meta name="keywords" content="Hasan Emre Cihan hakkında, Emre Cihan, emrecihan, sistem yöneticisi, elektronik geliştirici"/>
+  <link rel="canonical" href="https://emrecihan.com.tr/hakkimda"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#FAFAF8;--bg2:#F4F1EC;--acc:#E8621A;--acc2:#F5902E;--dim:rgba(232,98,26,.09);--txt:#1A1410;--muted:#7A6A58;--faint:#C8BBB0;--bord:#E8E0D5;--card:#FFF;--sh:0 1px 3px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.04)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bord);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5%,72px);height:58px}
+    .nav-brand{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--txt);text-decoration:none}.nav-brand span{color:var(--acc)}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;padding:5px 10px;border-radius:6px;transition:all .18s}
+    .nav-links a:hover{color:var(--txt);background:var(--bg2)}.nav-links a.active{color:var(--acc);background:var(--dim);font-weight:500}
+    .nav-links .nav-docs{color:var(--acc);border:1px solid rgba(232,98,26,.25)}.nav-links .nav-docs:hover{background:var(--dim)}
+    @media(max-width:640px){.nav-links{display:none}}
+    .wrap{max-width:760px;margin:0 auto;padding:0 clamp(16px,5%,72px)}
+    .page-header{padding:44px 0 32px;border-bottom:1px solid var(--bord);display:flex;align-items:center;gap:24px}
+    .avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:600;font-size:1.4rem;color:#fff;flex-shrink:0}
+    .page-header h1{font-family:'Lora',serif;font-weight:600;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.3px;margin-bottom:4px}
+    .page-header h1 em{font-style:italic;color:var(--acc)}
+    .header-sub{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted)}
+    .content{padding:36px 0 60px}
+    .bio-text p{font-size:.92rem;color:var(--muted);line-height:1.85;margin-bottom:16px}
+    .bio-text p strong{color:var(--txt)}
+    .divider{border:none;border-top:1px solid var(--bord);margin:28px 0}
+    .skills-section h2{font-family:'Lora',serif;font-weight:600;font-size:1rem;margin-bottom:16px;color:var(--txt)}
+    .skill-group{margin-bottom:20px}
+    .skill-label{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--acc);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .st{font-size:.73rem;font-family:'JetBrains Mono',monospace;padding:3px 9px;border-radius:4px;border:1px solid var(--bord);color:var(--muted);background:var(--bg2)}
+    .contact-box{background:var(--bg2);border:1px solid var(--bord);border-radius:10px;padding:22px;margin-top:28px}
+    .contact-box h2{font-family:'Lora',serif;font-weight:600;font-size:.95rem;margin-bottom:6px}
+    .contact-box p{font-size:.82rem;color:var(--muted);margin-bottom:14px;line-height:1.6}
+    .contact-links{display:flex;gap:10px;flex-wrap:wrap}
+    .c-link{font-size:.78rem;color:var(--acc);text-decoration:none;border:1px solid rgba(232,98,26,.25);padding:5px 14px;border-radius:6px;transition:all .15s}
+    .c-link:hover{background:var(--dim)}
+    footer{border-top:1px solid var(--bord);padding:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    footer p{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint)}
+    footer p a{color:var(--muted);text-decoration:none}
+    .foot-links{display:flex;gap:16px}
+    .foot-links a{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--faint);text-decoration:none;transition:color .15s}
+    .foot-links a:hover{color:var(--acc)}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand"><span>emre</span>cihan</a>
+  <div class="nav-links">
+    <a href="index.html">Anasayfa</a><a href="elektronik.html">Elektronik</a>
+    <a href="it-sistem.html">IT & Sistem</a><a href="yazilim.html">Yazılım</a>
+    <a href="projeler.html">Projeler</a><a href="dokumanlar.html" class="nav-docs">📁 Dokümanlar</a>
+    <a href="hakkimda.html" class="active">Hakkımda</a>
+  </div>
+</nav>
+<div class="wrap">
+  <header class="page-header">
+    <div class="avatar">HE</div>
+    <div>
+      <h1>Hasan <em>Emre</em> Cihan</h1>
+      <div class="header-sub">emrecihan.com.tr · Sistem Yöneticisi & Elektronik Meraklısı</div>
+    </div>
+  </header>
+  <div class="content">
+    <div class="bio-text">
+      <p>Merhaba. Ben Emre — mesleğim gereği IT tarafında çalışıyorum. <strong>Sunucu yönetimi, Active Directory, ERP sistemleri</strong> ve kurumsal yazılım geliştirme günlük işimin büyük bir parçası.</p>
+      <p>Ama asıl zevk aldığım şey elektronik. Küçüklükten beri bozuk cihazları açmak, devreleri anlamaya çalışmak, bir şeyleri kendi elimle yapmak hep ilgimi çekti. Artık bu biraz daha sistematik bir hal aldı: <strong>PCB tasarımı, gömülü sistemler, IoT projeleri</strong>.</p>
+      <p>Bu blog bu iki dünyanın kesiştiği yer. Hem iş hayatında hem kişisel projelerimde öğrendiklerimi, hata yaptığım ve düzelttiklerimi yazıyorum. Ne kadar teknik ne kadar sıradan olduğunu pek düşünmüyorum — yararlıysa paylaşıyorum.</p>
+    </div>
+    <hr class="divider"/>
+    <div class="skills-section">
+      <h2>Ne üzerine çalışıyorum</h2>
+      <div class="skill-group">
+        <div class="skill-label">Elektronik & Donanım</div>
+        <div class="skill-tags"><span class="st">PCB Tasarımı</span><span class="st">KiCad</span><span class="st">ESP32</span><span class="st">Arduino</span><span class="st">ATmega</span><span class="st">IoT</span><span class="st">MQTT</span><span class="st">Gömülü C</span><span class="st">JLCPCB</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">IT & Sistem</div>
+        <div class="skill-tags"><span class="st">Windows Server</span><span class="st">Active Directory</span><span class="st">Group Policy</span><span class="st">DNS</span><span class="st">PowerShell</span><span class="st">Hyper-V</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Yazılım & ERP</div>
+        <div class="skill-tags"><span class="st">Node.js</span><span class="st">SQL Server</span><span class="st">React</span><span class="st">ERP</span><span class="st">REST API</span><span class="st">Python</span></div>
+      </div>
+    </div>
+    <div class="contact-box">
+      <h2>İletişim</h2>
+      <p>Bir projeyle ilgili soru sormak, birlikte çalışmak ya da sadece bir şey sormak istersen ulaşabilirsin.</p>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/hasanemrecihan" rel="noopener" class="c-link">LinkedIn</a>
+        <a href="https://github.com/hasanemrecihan" rel="noopener" class="c-link">GitHub</a>
+        <a href="dokumanlar.html" class="c-link">📁 Dokümanlar</a>
+      </div>
+    </div>
+  </div>
+  <footer><p>© 2025 <a href="index.html">Hasan Emre Cihan</a></p><nav class="foot-links"><a href="index.html">Ana Sayfa</a><a href="dokumanlar.html">Dokümanlar</a><a href="projeler.html">Projeler</a></nav></footer>
+</div>
+</body>
+</html>
